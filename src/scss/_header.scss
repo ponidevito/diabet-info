@@ -1,0 +1,229 @@
+.header {
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  &__items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100px;
+    @include lg {
+      min-height: 60px;
+    }
+  }
+  .menu {
+    &__icon {
+      display: none;
+      @include md {
+        z-index: 5;
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 18px;
+        cursor: pointer;
+
+        & .span,
+        &::before,
+        &::after {
+          left: 0;
+          position: absolute;
+          height: 10%;
+          width: 100%;
+          transition: all 0.3s ease 0s;
+          background-color: #000;
+        }
+
+        &::before,
+        &::after {
+          content: "";
+        }
+        &::before {
+          top: 0;
+        }
+        &::after {
+          bottom: 0;
+        }
+        & span {
+          top: 50%;
+          transform: scale(1) translate(0px, -50%);
+        }
+        &._active span {
+          transform: scale(0) translate(0px, -50%);
+        }
+        &._active::before {
+          top: 50%;
+          transform: rotate(-45deg) translate(0px, -70%);
+        }
+        &._active::after {
+          bottom: 50%;
+          transform: rotate(40deg) translate(0px, 30%);
+        }
+      }
+    }
+
+    &__body {
+      display: flex;
+      justify-content: space-between;
+      z-index: 2;
+      @include md {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $background;
+        padding: 100px 30px 30px 30px;
+        transform: translate(-100%, 0px);
+        overflow: auto;
+        flex-direction: column;
+        justify-content: unset;
+        &._active:before {
+          content: "";
+          position: fixed;
+          width: 100%;
+          top: 0;
+          left: 0;
+        }
+        &._active {
+          transform: translate(0px, 0px);
+          transition: all 0.2s;
+          .menu__logo {
+            display: none;
+          }
+        }
+      }
+    }
+    &__item {
+      position: relative;
+
+      &.sub {
+        position: relative;
+        .menu__item-svg {
+          &._active {
+            fill: #1191c8;
+          }
+        }
+        .submenu {
+          padding: 0px -15px;
+          opacity: 0;
+          position: absolute;
+          width: 80px;
+          left: 0px;
+          font-size: 18px;
+          top: 25px;
+          right: 0px;
+          z-index: -1;
+          background-color: #eaf1e9;
+          transition: 0.3s ease;
+          border-radius: 10px;
+          @include md {
+            font-size: 20px;
+            top: 40px;
+            width: 120px;
+          }
+          &._active {
+            z-index: 3;
+            opacity: 1;
+          }
+          &__item {
+            &:first-child {
+              border-top-left-radius: 10px;
+              border-top-right-radius: 10px;
+            }
+            width: 100%;
+            cursor: pointer;
+
+            transition: 0.2s ease;
+            @include md {
+              padding: 15px;
+            }
+
+            &:hover {
+              background-color: #b9d8cf;
+              color: white;
+              .submenu__link {
+                color: $primary;
+              }
+            }
+            &:last-child {
+              border-bottom-left-radius: 10px;
+              border-bottom-right-radius: 10px;
+            }
+          }
+
+          &__link {
+            display: inline-block;
+            width: 80px;
+            padding: 10px;
+            color: $primary;
+          }
+        }
+      }
+    }
+    &__link-svg {
+      transition: 0.3s ease;
+      &._active {
+        transform: rotate(180deg);
+      }
+    }
+    &__list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 60px;
+      @include lg {
+        gap: 30px;
+      }
+      @include md {
+        flex-direction: column;
+        align-items: center;
+        &:not(:last-child) {
+          margin-bottom: 30px;
+          gap: 40px;
+        }
+      }
+      @include md {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 30px;
+        gap: 40px;
+      }
+    }
+    &__link {
+      position: relative;
+      color: $primary;
+      font-weight: 600;
+
+      @include lg {
+        font-size: 17px;
+      }
+      @include md {
+        font-size: 25px;
+      }
+
+      &:hover {
+        transition: 0.2s ease;
+        color: #1191c8;
+        &::after {
+          content: "";
+
+          position: absolute;
+          width: 50%;
+          height: 2px;
+          background-color: #1191c8;
+          bottom: -10px;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+  }
+
+  .effect {
+    display: none;
+    @include md {
+      padding: 16px 10px;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}

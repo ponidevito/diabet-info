@@ -1,0 +1,33 @@
+.about {
+  &__items {
+    display: flex;
+    gap: 100px;
+    align-items: center;
+    @media (max-width: 1050px) {
+      gap: 20px;
+    }
+    @include lg {
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+  }
+
+  &__item {
+    flex: 0 1 50%;
+    &:last-child {
+      text-align: center;
+    }
+    @include lg {
+      flex: 1 1 100%;
+    }
+  }
+
+  &__info {
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 130%;
+    color: $primary;
+    letter-spacing: 0.4px;
+  }
+}

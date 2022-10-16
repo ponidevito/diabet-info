@@ -1,0 +1,38 @@
+.section {
+  &__table {
+    padding: 100px 0px 50px 0px;
+  }
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 30px;
+  &__title {
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+  }
+  &__name {
+    font-weight: 700;
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+  &__items {
+    display: flex;
+    flex-direction: column;
+  }
+  &__item {
+    flex-direction: column;
+  }
+}
+tr {
+  display: flex;
+}
+td,
+th {
+  border: 1px solid #dddddd;
+  background: #e9f1e8;
+  flex: 0 1 50%;
+  text-align: left;
+  padding: 15px;
+}

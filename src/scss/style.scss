@@ -1,0 +1,41 @@
+// Global SCSS-files imports
+@import "./mixins";
+@import "./vars";
+@import "./reset";
+@import "./fonts";
+@import "./global";
+
+// Sections or Pages SCSS-files imports
+@import "./header";
+@import "./select";
+@import "./about";
+@import "./units";
+@import "./table";
+@import "./type1";
+@import "./type2";
+@import "./calculatorDiabetes";
+
+// @import './footer';
+
+// Libs
+// @import './libs/swiper';
+
+html,
+body {
+  height: 100%;
+  font-family: Karla;
+  font-weight: 400;
+  color: $primary;
+  font-size: 18px;
+  background-color: $background;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.main {
+  flex: 1 1 auto;
+}

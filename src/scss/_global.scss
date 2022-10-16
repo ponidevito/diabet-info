@@ -1,0 +1,89 @@
+// scroll burger off
+
+//body lock
+._lock {
+  overflow: hidden;
+}
+
+// global container
+
+[class*="__container"] {
+  max-width: 1160px;
+  margin: 0px auto;
+  padding: 0px 15px;
+  box-sizing: content-box;
+}
+
+// image ibg
+._ibg {
+  position: relative;
+}
+
+._ibg img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+.title {
+  font-weight: 700;
+  color: $primary;
+  font-size: 50px;
+  line-height: 150%;
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  @include lg {
+    font-size: 38px;
+    line-height: 130%;
+  }
+  @include xs {
+    line-height: 110%;
+  }
+}
+.subtitle {
+  font-family: Poppins;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 130%;
+  color: $primary;
+  text-align: justify;
+  letter-spacing: 0.5px;
+  span {
+    font-weight: 700;
+  }
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  @include lg{
+    text-align: start;
+  }
+  @include md {
+    font-size: 17px;
+  }
+}
+
+.global-section {
+  padding: 100px 0px;
+  @include lg {
+    padding: 50px 0px;
+  }
+  @include md {
+    padding: 20px 0px;
+  }
+}
+
+// Animations
+// Fade
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
