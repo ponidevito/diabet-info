@@ -680,6 +680,9 @@ th {
           align-items: center;
   gap: 20px;
   width: 50%;
+  height: 50px;
+  border-top: 1px solid rgb(211, 241, 170);
+  border-bottom: 1px solid rgb(211, 241, 170);
 }
 
 .form__label {
@@ -691,6 +694,47 @@ th {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 10px;
+  position: relative;
+}
+
+.form__modal-carbon,
+.form__modal-carbon-second {
+  border-radius: 5px;
+  letter-spacing: 0.3px;
+  position: absolute;
+  bottom: 30px;
+  left: 20px;
+  width: 250px;
+  height: 30px;
+  opacity: 0;
+  z-index: -1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.form__modal-carbon._active,
+._active.form__modal-carbon-second {
+  color: #ffffff;
+  background-color: rgb(73, 73, 73);
+  opacity: 1;
+  z-index: 1;
+}
+
+.form__modal-carbon-second._active {
+  color: #ffffff;
+  background-color: rgb(73, 73, 73);
+  opacity: 1;
+  z-index: 1;
 }
 
 .form__input {
@@ -1196,6 +1240,11 @@ body {
 
   .form__btnText {
     font-size: 17px;
+  }
+
+  .form__modal-carbon,
+  .form__modal-carbon-second {
+    font-size: 14px;
   }
 
   .form__result {
