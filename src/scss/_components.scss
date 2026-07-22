@@ -193,7 +193,6 @@
   transition: 0.25s ease;
   &:hover {
     box-shadow: $shadow;
-    transform: translateY(-2px);
   }
   &__number {
     font-weight: 700;
@@ -304,7 +303,6 @@
   transition: 0.25s ease;
   &:hover {
     box-shadow: $shadow;
-    transform: translateY(-3px);
     border-color: $brand;
   }
   &__icon {

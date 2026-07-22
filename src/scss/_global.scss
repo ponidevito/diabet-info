@@ -28,6 +28,10 @@
   object-fit: cover;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .title {
   font-weight: 700;
   color: $brand;
