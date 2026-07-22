@@ -62,7 +62,7 @@
 
   &--accent {
     color: $accentDark;
-    background-color: rgba(255, 111, 89, 0.12);
+    background-color: rgba(205, 56, 29, 0.12);
   }
 }
 
@@ -171,8 +171,8 @@
   }
 
   &--warning {
-    background-color: rgba(255, 111, 89, 0.08);
-    border-color: rgba(255, 111, 89, 0.35);
+    background-color: rgba(205, 56, 29, 0.08);
+    border-color: rgba(205, 56, 29, 0.35);
     border-left-color: $accent;
   }
 }

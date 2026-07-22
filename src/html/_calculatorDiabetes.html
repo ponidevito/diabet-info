@@ -22,21 +22,22 @@
             <div class="calculator__item">
                 
             <form  class="calculator__form form" name="form">
-                <div class="form__btnBox">                        
-                    <input type="submit"  class="form__btn1 form-btn"  name="btn1" value="10">
-                    <input type="submit" class="form__btn2 form-btn"  name="btn2" value="12">
+                <fieldset class="form__btnBox">
+                    <legend class="visually-hidden">Скільки грамів вуглеводів прийнято за 1 хлібну одиницю</legend>
+                    <input type="submit" class="form__btn1 form-btn" name="btn1" value="10" aria-pressed="false" aria-label="10 г вуглеводів на 1 хлібну одиницю">
+                    <input type="submit" class="form__btn2 form-btn" name="btn2" value="12" aria-pressed="false" aria-label="12 г вуглеводів на 1 хлібну одиницю">
                     <div class="form__resultBox">
                     <div class="form__btnText">Хлібна <br> одиниця</div>
-                    <div class="form__result"></div>
+                    <div class="form__result" aria-live="polite"></div>
                  </div>
-            </div>
+            </fieldset>
               <label for="carbon" class="form__label">Вуглеводи в 100 грамах
-                <input type="number" name="carbohydrates" min="0"  max="100"  class="form__input input" value="" id="carbon">
-                <div class="form__modal-carbon">Не більше 100 грам вуглеводів</div>
-                <div class="form__modal-carbon-second">Не менше 1 граму вуглеводів</div>
+                <input type="number" name="carbohydrates" min="0" max="100" class="form__input input" value="" id="carbon" aria-describedby="carbon-hint-max carbon-hint-min" aria-invalid="false">
+                <div class="form__modal-carbon" id="carbon-hint-max" aria-live="polite">Не більше 100 грам вуглеводів</div>
+                <div class="form__modal-carbon-second" id="carbon-hint-min" aria-live="polite">Не менше 1 граму вуглеводів</div>
             </label>
             <label for="weight" class="form__label">Загальна вага продукта в грамах
-                <input type="number" name="totalWeight" id="weight" class="form__input input">
+                <input type="number" name="totalWeight" id="weight" class="form__input input" aria-invalid="false">
             </label>
             <button class="form__resultBtn" disabled>Підрахунок</button>
         
@@ -53,7 +54,7 @@
         </div>
 
         <div class="callout callout--warning">
-            <span class="callout__icon">⚠️</span>
+            <span class="callout__icon" aria-hidden="true">⚠️</span>
             <span>Калькулятор має ознайомчий характер і не замінює рекомендацій лікаря чи дієтолога щодо
                 харчування.</span>
         </div>

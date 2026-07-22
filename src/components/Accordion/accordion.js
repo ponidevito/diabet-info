@@ -6,13 +6,18 @@ function accordion() {
             const parent = item.parentNode
             if (parent.classList.contains('accordion__item-active')) {
                 parent.classList.remove('accordion__item-active')
+                item.setAttribute('aria-expanded', 'false')
             } else {
                 document
                     .querySelectorAll('.accordion__item')
-                    .forEach(child => child.classList.remove('accordion__item-active'))   
+                    .forEach(child => {
+                        child.classList.remove('accordion__item-active')
+                        child.querySelector('.accordion__item-trigger').setAttribute('aria-expanded', 'false')
+                    })
                 parent.classList.add('accordion__item-active')
+                item.setAttribute('aria-expanded', 'true')
             }
         })
     })
 }
-accordion() 
+accordion()

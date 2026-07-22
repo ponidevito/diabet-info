@@ -1,3 +1,5 @@
+<a href="#main-content" class="skip-link">Перейти до основного вмісту</a>
+
 <!-- header -->
 <header class="header">
     <div class="header__container">
@@ -6,19 +8,19 @@
        <img src="img/header/logo.png" alt="DiabetInfo — інформаційний портал про цукровий діабет">
       </a>
       <div class="header__menu menu">
-        <nav class="menu__body">
+        <nav class="menu__body" id="primary-menu" aria-label="Основна навігація">
           <ul class="menu__list">
             <li class="menu__item">
               <a href="index.html" class="menu__link">Про діабет</a>
             </li>
 
             <li class="menu__item sub">
-              <a href="#" class="menu__link menu__linkSub">Типи діабету
-                <svg class="menu__link-svg" width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path class="menu__item-svg" fill-rule="evenodd" clip-rule="evenodd" d="M9.53033 0.96967C9.82322 1.26256 9.82322 1.73744 9.53033 2.03033L5.53033 6.03033C5.23744 6.32322 4.76256 6.32322 4.46967 6.03033L0.46967 2.03033C0.176777 1.73744 0.176777 1.26256 0.46967 0.96967C0.762563 0.676777 1.23744 0.676777 1.53033 0.96967L5 4.43934L8.46967 0.96967C8.76256 0.676777 9.23744 0.676777 9.53033 0.96967Z" fill="#203239"/>
+              <button type="button" class="menu__link menu__linkSub" aria-expanded="false" aria-controls="submenu-types">Типи діабету
+                <svg class="menu__link-svg" width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path class="menu__item-svg" fill-rule="evenodd" clip-rule="evenodd" d="M9.53033 0.96967C9.82322 1.26256 9.82322 1.73744 9.53033 2.03033L5.53033 6.03033C5.23744 6.32322 4.76256 6.32322 4.46967 6.03033L0.46967 2.03033C0.176777 1.73744 0.176777 1.26256 0.46967 0.96967C0.762563 0.676777 1.23744 0.676777 1.53033 0.96967L5 4.43934L8.46967 0.96967C8.76256 0.676777 9.23744 0.676777 9.53033 0.96967Z" fill="currentColor"/>
                 </svg>
-                </a>
-                <ul class="submenu">
+                </button>
+                <ul class="submenu" id="submenu-types">
                   <li class="submenu__item"><a href="type-1.html" class="submenu__link">Діабет 1 типу</a></li>
                   <li class="submenu__item"><a href="type-2.html" class="submenu__link">Діабет 2 типу</a></li>
                   <li class="submenu__item"><a href="prediabetes.html" class="submenu__link">Переддіабет</a></li>
@@ -27,12 +29,12 @@
             </li>
 
             <li class="menu__item sub">
-              <a href="#" class="menu__link menu__linkSub">Про хворобу
-                <svg class="menu__link-svg" width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path class="menu__item-svg" fill-rule="evenodd" clip-rule="evenodd" d="M9.53033 0.96967C9.82322 1.26256 9.82322 1.73744 9.53033 2.03033L5.53033 6.03033C5.23744 6.32322 4.76256 6.32322 4.46967 6.03033L0.46967 2.03033C0.176777 1.73744 0.176777 1.26256 0.46967 0.96967C0.762563 0.676777 1.23744 0.676777 1.53033 0.96967L5 4.43934L8.46967 0.96967C8.76256 0.676777 9.23744 0.676777 9.53033 0.96967Z" fill="#203239"/>
+              <button type="button" class="menu__link menu__linkSub" aria-expanded="false" aria-controls="submenu-about">Про хворобу
+                <svg class="menu__link-svg" width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path class="menu__item-svg" fill-rule="evenodd" clip-rule="evenodd" d="M9.53033 0.96967C9.82322 1.26256 9.82322 1.73744 9.53033 2.03033L5.53033 6.03033C5.23744 6.32322 4.76256 6.32322 4.46967 6.03033L0.46967 2.03033C0.176777 1.73744 0.176777 1.26256 0.46967 0.96967C0.762563 0.676777 1.23744 0.676777 1.53033 0.96967L5 4.43934L8.46967 0.96967C8.76256 0.676777 9.23744 0.676777 9.53033 0.96967Z" fill="currentColor"/>
                 </svg>
-                </a>
-                <ul class="submenu">
+                </button>
+                <ul class="submenu" id="submenu-about">
                   <li class="submenu__item"><a href="symptoms.html" class="submenu__link">Симптоми</a></li>
                   <li class="submenu__item"><a href="causes.html" class="submenu__link">Причини і фактори ризику</a></li>
                   <li class="submenu__item"><a href="diagnosis.html" class="submenu__link">Діагностика</a></li>
@@ -43,12 +45,12 @@
             </li>
 
             <li class="menu__item sub">
-              <a href="#" class="menu__link menu__linkSub">Харчування
-                <svg class="menu__link-svg" width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path class="menu__item-svg" fill-rule="evenodd" clip-rule="evenodd" d="M9.53033 0.96967C9.82322 1.26256 9.82322 1.73744 9.53033 2.03033L5.53033 6.03033C5.23744 6.32322 4.76256 6.32322 4.46967 6.03033L0.46967 2.03033C0.176777 1.73744 0.176777 1.26256 0.46967 0.96967C0.762563 0.676777 1.23744 0.676777 1.53033 0.96967L5 4.43934L8.46967 0.96967C8.76256 0.676777 9.23744 0.676777 9.53033 0.96967Z" fill="#203239"/>
+              <button type="button" class="menu__link menu__linkSub" aria-expanded="false" aria-controls="submenu-food">Харчування
+                <svg class="menu__link-svg" width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path class="menu__item-svg" fill-rule="evenodd" clip-rule="evenodd" d="M9.53033 0.96967C9.82322 1.26256 9.82322 1.73744 9.53033 2.03033L5.53033 6.03033C5.23744 6.32322 4.76256 6.32322 4.46967 6.03033L0.46967 2.03033C0.176777 1.73744 0.176777 1.26256 0.46967 0.96967C0.762563 0.676777 1.23744 0.676777 1.53033 0.96967L5 4.43934L8.46967 0.96967C8.76256 0.676777 9.23744 0.676777 9.53033 0.96967Z" fill="currentColor"/>
                 </svg>
-                </a>
-                <ul class="submenu">
+                </button>
+                <ul class="submenu" id="submenu-food">
                   <li class="submenu__item"><a href="nutrition.html" class="submenu__link">Харчування при діабеті</a></li>
                   <li class="submenu__item"><a href="units.html" class="submenu__link">Хлібна одиниця</a></li>
                   <li class="submenu__item"><a href="table.html" class="submenu__link">Таблиця ХО</a></li>
@@ -64,9 +66,9 @@
       </div>
 
       <div class="effect">
-        <div class="menu__icon" role="button" aria-label="Відкрити меню">
+        <button type="button" class="menu__icon" aria-expanded="false" aria-controls="primary-menu" aria-label="Відкрити меню">
           <span class="span"></span>
-        </div>
+        </button>
 
       </div>
       </div>

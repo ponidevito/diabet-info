@@ -1,16 +1,24 @@
 // Custom scripts
 
-const lins = document.getElementsByClassName("menu__item a");
-
 //burger js
 
 let burgerMenu = document.querySelector(".menu__icon");
+let menuBody = document.querySelector(".menu__body");
 function burger() {
-  burgerMenu.classList.toggle("_active");
+  let isOpen = burgerMenu.classList.toggle("_active");
   document.body.classList.toggle("_lock");
-  document.querySelector(".menu__body").classList.toggle("_active");
+  menuBody.classList.toggle("_active");
+  burgerMenu.setAttribute("aria-expanded", String(isOpen));
+  burgerMenu.setAttribute("aria-label", isOpen ? "Закрити меню" : "Відкрити меню");
 }
 burgerMenu.addEventListener("click", burger);
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && burgerMenu.classList.contains("_active")) {
+    burger();
+    burgerMenu.focus();
+  }
+});
 
 let html = document.querySelector("html");
 
@@ -20,23 +28,35 @@ let subs = document.querySelectorAll(".menu__item.sub");
 function closeAllSubmenus(except) {
   subs.forEach((subItem) => {
     if (subItem === except) return;
+    let trigger = subItem.querySelector(".menu__linkSub");
     subItem.querySelector(".submenu").classList.remove("_active");
     subItem.querySelector(".menu__item-svg").classList.remove("_active");
     subItem.querySelector(".menu__link-svg").classList.remove("_active");
-    subItem.querySelector(".menu__linkSub").classList.remove("_activeArrow");
+    trigger.classList.remove("_activeArrow");
+    trigger.setAttribute("aria-expanded", "false");
   });
 }
 
 subs.forEach((subItem) => {
-  subItem.addEventListener("click", function (e) {
+  let trigger = subItem.querySelector(".menu__linkSub");
+
+  trigger.addEventListener("click", function (e) {
     let submenuEl = subItem.querySelector(".submenu");
     let isActive = submenuEl.classList.contains("_active");
     closeAllSubmenus(subItem);
     submenuEl.classList.toggle("_active", !isActive);
     subItem.querySelector(".menu__item-svg").classList.toggle("_active", !isActive);
     subItem.querySelector(".menu__link-svg").classList.toggle("_active", !isActive);
-    subItem.querySelector(".menu__linkSub").classList.toggle("_activeArrow", !isActive);
+    trigger.classList.toggle("_activeArrow", !isActive);
+    trigger.setAttribute("aria-expanded", String(!isActive));
     e.stopPropagation();
+  });
+
+  subItem.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      closeAllSubmenus();
+      trigger.focus();
+    }
   });
 });
 
@@ -48,6 +68,17 @@ html.addEventListener("click", function (e) {
   if (carbonHint) carbonHint.classList.remove("_active");
   if (carbonHintSecond) carbonHintSecond.classList.remove("_active");
 });
+
+// highlight the current page in navigation for assistive tech (aria-current)
+(function markCurrentPage() {
+  let currentPath = window.location.pathname.split("/").pop() || "index.html";
+  document.querySelectorAll(".menu__link[href], .submenu__link[href], .footer__link[href]").forEach((link) => {
+    let linkPath = link.getAttribute("href").split("/").pop();
+    if (linkPath === currentPath) {
+      link.setAttribute("aria-current", "page");
+    }
+  });
+})();
 
 // calculator
 
@@ -71,8 +102,10 @@ if (document.querySelector(".section__calculator")) {
       item.addEventListener("click", () => {
         btnXo.forEach((item) => {
           item.style.backgroundColor = "rgb(228, 245, 243)";
+          item.setAttribute("aria-pressed", "false");
         });
         item.style.backgroundColor = "rgb(255, 111, 89)";
+        item.setAttribute("aria-pressed", "true");
         xo.push(item.value);
         result.innerHTML = "";
         event.preventDefault();
@@ -108,6 +141,7 @@ if (document.querySelector(".section__calculator")) {
     totalWeight.value = "";
     btnXo.forEach((item) => {
       item.style.backgroundColor = "rgb(228, 245, 243)";
+      item.setAttribute("aria-pressed", "false");
       btnResult.setAttribute("disabled", "");
     });
     massive = [];
@@ -120,28 +154,29 @@ if (document.querySelector(".section__calculator")) {
   let carbonRegExp = /^[0-9]{1,20}$/;
   carbohydrates.oninput = () => {
     let loginValid = carbonRegExp.test(carbohydrates.value);
-    console.log(loginValid);
     if (loginValid) {
       carbohydrates.style.border = "1px solid rgb(124, 231, 241)";
-    
+      carbohydrates.setAttribute("aria-invalid", "false");
+
       if (carbohydrates.value > 100 ) {
         document.querySelector(".form__modal-carbon").classList.add("_active");
-      
+        carbohydrates.setAttribute("aria-invalid", "true");
       }
      else if(carbohydrates.value < 1 ){
       document.querySelector(".form__modal-carbon-second").classList.add("_active");
-        console.log("hhhhh")
+        carbohydrates.setAttribute("aria-invalid", "true");
       }
-     
+
        else {
         document
           .querySelector(".form__modal-carbon")
           .classList.remove("_active");
           document.querySelector(".form__modal-carbon-second").classList.remove("_active");
       }
-      
+
     } else {
       carbohydrates.style.border = "1px solid red";
+      carbohydrates.setAttribute("aria-invalid", "true");
     }
   };
   let totalRegExp = /^[0-9]{2,20}$/;
@@ -149,8 +184,10 @@ if (document.querySelector(".section__calculator")) {
     let loginValid = totalRegExp.test(totalWeight.value);
     if (loginValid) {
       totalWeight.style.border = "1px solid rgb(124, 231, 241)";
+      totalWeight.setAttribute("aria-invalid", "false");
     } else {
       totalWeight.style.border = "1px solid red";
+      totalWeight.setAttribute("aria-invalid", "true");
     }
   };
 

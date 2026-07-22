@@ -105,6 +105,7 @@
         .submenu {
           padding: 8px;
           opacity: 0;
+          visibility: hidden;
           position: absolute;
           width: 200px;
           left: 0px;
@@ -123,6 +124,7 @@
             width: 100%;
             position: static;
             opacity: 1;
+            visibility: visible;
             z-index: 1;
             display: none;
             box-shadow: none;
@@ -136,6 +138,7 @@
           &._active {
             z-index: 3;
             opacity: 1;
+            visibility: visible;
           }
           &__item {
             border-radius: 8px;
@@ -161,6 +164,11 @@
             padding: 10px 12px;
             color: $primary;
             white-space: nowrap;
+
+            &[aria-current="page"] {
+              color: $accent;
+              font-weight: 700;
+            }
           }
         }
       }
@@ -222,6 +230,23 @@
           transform: translate(-50%, -50%);
         }
       }
+
+      &:focus-visible {
+        outline: 2px solid $accent;
+        outline-offset: 4px;
+        border-radius: 4px;
+      }
+
+      &[aria-current="page"] {
+        color: $accent;
+      }
+    }
+    &__linkSub {
+      background: none;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
   }
 
@@ -232,5 +257,40 @@
       display: flex;
       justify-content: flex-end;
     }
+  }
+}
+
+.menu__icon {
+  border: none;
+  background: none;
+  padding: 0;
+
+  &:focus-visible {
+    outline: 2px solid $accent;
+    outline-offset: 4px;
+  }
+}
+
+.submenu__link:focus-visible {
+  outline: 2px solid $brand;
+  outline-offset: -2px;
+}
+
+// Skip link — visible only when focused (keyboard users)
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 12px;
+  z-index: 100;
+  background-color: $brand;
+  color: $colorWhite;
+  padding: 12px 20px;
+  border-radius: 0 0 8px 8px;
+  font-family: $fontMain;
+  font-weight: 600;
+  transition: top 0.2s ease;
+
+  &:focus {
+    top: 0;
   }
 }

@@ -54,6 +54,10 @@
     &:hover {
       color: $accent;
     }
+    &[aria-current="page"] {
+      color: $accent;
+      font-weight: 600;
+    }
   }
 
   &__disclaimer {
