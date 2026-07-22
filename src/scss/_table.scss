@@ -7,6 +7,10 @@
 .table {
   width: 100%;
   margin-bottom: 30px;
+  border: 1px solid $border;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: $shadowSm;
   &__title {
     &:not(:last-child) {
       margin-bottom: 40px;
@@ -16,10 +20,12 @@
     font-weight: 700;
     font-size: 25px;
     margin-bottom: 20px;
+    color: $brand;
   }
   &__items {
     display: flex;
     flex-direction: column;
+    gap: 40px;
   }
   &__item {
     flex-direction: column;
@@ -27,12 +33,19 @@
 }
 tr {
   display: flex;
+  &:nth-child(odd) {
+    background: $background;
+  }
 }
 td,
 th {
-  border: 1px solid #dddddd;
-  background: #e9f1e8;
+  border-bottom: 1px solid $border;
   flex: 0 1 50%;
   text-align: left;
   padding: 15px;
+}
+th {
+  background: $brand;
+  color: $colorWhite;
+  font-weight: 700;
 }

@@ -35,17 +35,23 @@
   }
 
   &__link {
-    color: #1191c8;
+    display: inline-block;
+    color: $colorWhite;
+    background-color: $accent;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: 999px;
     transition: 0.3s ease;
     &:hover {
-      text-decoration: underline;
+      background-color: $accentDark;
     }
   }
 
   &__image {
     text-align: center;
     img {
-      box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.75);
+      box-shadow: $shadow;
+      border-radius: 16px;
       max-width: 470px;
       @include sm {
         max-width: 100%;

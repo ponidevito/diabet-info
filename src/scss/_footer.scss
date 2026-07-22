@@ -1,0 +1,85 @@
+.footer {
+  background-color: $surface;
+  border-top: 1px solid $border;
+  margin-top: 60px;
+  padding: 60px 0 30px;
+
+  &__top {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr;
+    gap: 30px;
+    padding-bottom: 40px;
+    @include lg {
+      grid-template-columns: 1fr 1fr;
+    }
+    @include xs {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__brand {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__logo-image {
+    max-height: 40px;
+  }
+
+  &__about {
+    font-family: $fontMain;
+    font-size: 14px;
+    line-height: 150%;
+    color: $muted;
+    max-width: 320px;
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__col-title {
+    font-weight: 700;
+    color: $brand;
+    margin-bottom: 4px;
+  }
+
+  &__link {
+    font-family: $fontMain;
+    font-size: 15px;
+    color: $primary;
+    &:hover {
+      color: $accent;
+    }
+  }
+
+  &__disclaimer {
+    margin-top: 0;
+    &-link {
+      color: $brand;
+      font-weight: 600;
+      &:hover {
+        color: $accent;
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 24px;
+    border-top: 1px solid $border;
+    font-family: $fontMain;
+    font-size: 13px;
+    color: $muted;
+    @include xs {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+}

@@ -1,6 +1,6 @@
 .accordion {
     .accordion__item {
-        border-bottom: 1px solid#C4C4C4;
+        border-bottom: 1px solid $border;
 
         &.accordion__item-active {
             .accordion__item-content {
@@ -33,16 +33,17 @@
                 font-size: 16px;
                 line-height: 22px;
                 letter-spacing: 0.035em;
-                color: #8547C6;
+                color: $accent;
             }
 
             .trigger__text {
+                font-family: $fontMain;
                 font-style: normal;
                 font-weight: bold;
-                font-size: 16px;
-                line-height: 22px;
-                letter-spacing: 0.035em;
-                color: #000000;
+                font-size: 18px;
+                line-height: 140%;
+                letter-spacing: 0.02em;
+                color: $primary;
                 margin-left: 10px;
             }
 
@@ -54,7 +55,7 @@
                     display: block;
                     width: 18px;
                     height: 2px;
-                    background: black;
+                    background: $brand;
                     border-radius: 100px;
                 }
 
@@ -62,7 +63,7 @@
                     display: block;
                     width: 18px;
                     height: 2px;
-                    background: black;
+                    background: $brand;
                     margin-top: -2px;
                     border-radius: 100px;
                     transform: rotate(90deg);
@@ -76,8 +77,18 @@
             animation: fade .3s ease;
 
             .content__text {
-                margin-top: 25px;
+                font-family: $fontMain;
+                font-size: 18px;
+                line-height: 155%;
+                color: $muted;
+                max-width: 720px;
+                margin-top: 15px;
                 padding-left: 35px;
+
+                a {
+                    color: $brand;
+                    text-decoration: underline;
+                }
 
                 &:first-child {
                     margin-top: 0;

@@ -56,7 +56,8 @@
   }
 
   &__image {
-    box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: $shadow;
+    border-radius: 16px;
     max-width: 100%;
     @include lg {
       max-width: 400px;

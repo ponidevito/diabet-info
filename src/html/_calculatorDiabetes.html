@@ -1,6 +1,23 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Про діабет", "item": "https://diabetinfo.example/index.html"},
+    {"@type": "ListItem", "position": 2, "name": "Калькулятор ХО", "item": "https://diabetinfo.example/calculator.html"}
+  ]
+}
+</script>
+
 <section class="section__calculator global-section">
     <div class="calculator__container">
+        <div class="breadcrumbs">
+            <a href="index.html">Про діабет</a><span>→</span><span>Калькулятор ХО</span>
+        </div>
         <h1 class="calculator__title title">Калькулятор для підрахунку ХО</h1>
+        <div class="page-hero__lead">Вкажіть кількість вуглеводів у 100 г продукту та загальну вагу порції — калькулятор
+            порахує, скільки хлібних одиниць вона містить. Формула розрахунку спирається на визначення 1 ХО, описане
+            на сторінці <a href="units.html">"Хлібна одиниця"</a>.</div>
         <div class="calculator__items">
             <div class="calculator__item">
                 
@@ -25,13 +42,28 @@
         
             </form>
            
-            <a href="index.html" class="calculator__logo-item"><img src="img/calculator/logo.png" alt="logo" class="calculator__logo"></a>
+            <a href="index.html" class="calculator__logo-item"><img src="img/calculator/logo.png" alt="DiabetInfo" class="calculator__logo"></a>
         </div>
             <div class="calculator__item">
                 <div class="calculator__picture">
-                    <img src="img/calculator/calculator.jpg" alt="image" class="calculator__image">
+                    <img src="img/calculator/calculator.jpg" alt="Ілюстрація до калькулятора хлібних одиниць"
+                        class="calculator__image">
                 </div>
             </div>
+        </div>
+
+        <div class="callout callout--warning">
+            <span class="callout__icon">⚠️</span>
+            <span>Калькулятор має ознайомчий характер і не замінює рекомендацій лікаря чи дієтолога щодо
+                харчування.</span>
+        </div>
+
+        <div class="share-bar">
+            <span class="share-bar__label">Поділитися:</span>
+            <button class="share-bar__btn" data-share="facebook">Facebook</button>
+            <button class="share-bar__btn" data-share="telegram">Telegram</button>
+            <button class="share-bar__btn" data-share="viber">Viber</button>
+            <button class="share-bar__btn" data-share="copy">Скопіювати посилання</button>
         </div>
     </div>
 </section>

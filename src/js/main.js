@@ -13,33 +13,40 @@ function burger() {
 burgerMenu.addEventListener("click", burger);
 
 let html = document.querySelector("html");
-let sub = document.querySelector(".sub");
-let menu = document.querySelector(".submenu");
-let menulink = document.querySelector(".menu__linkSub");
-let arrow = document.querySelector(".menu__item-svg");
-const arrowRotate = document.querySelector(".menu__link-svg");
-function submenu() {
-  menu.classList.toggle("_active");
-  arrow.classList.add("_active");
-  arrowRotate.classList.add("_active");
-  menulink.classList.toggle("_activeArrow");
-  event.stopPropagation();
+
+// submenu (dropdown) — nav has several independent dropdowns
+let subs = document.querySelectorAll(".menu__item.sub");
+
+function closeAllSubmenus(except) {
+  subs.forEach((subItem) => {
+    if (subItem === except) return;
+    subItem.querySelector(".submenu").classList.remove("_active");
+    subItem.querySelector(".menu__item-svg").classList.remove("_active");
+    subItem.querySelector(".menu__link-svg").classList.remove("_active");
+    subItem.querySelector(".menu__linkSub").classList.remove("_activeArrow");
+  });
 }
 
-sub.addEventListener("click", submenu);
+subs.forEach((subItem) => {
+  subItem.addEventListener("click", function (e) {
+    let submenuEl = subItem.querySelector(".submenu");
+    let isActive = submenuEl.classList.contains("_active");
+    closeAllSubmenus(subItem);
+    submenuEl.classList.toggle("_active", !isActive);
+    subItem.querySelector(".menu__item-svg").classList.toggle("_active", !isActive);
+    subItem.querySelector(".menu__link-svg").classList.toggle("_active", !isActive);
+    subItem.querySelector(".menu__linkSub").classList.toggle("_activeArrow", !isActive);
+    e.stopPropagation();
+  });
+});
 
-// click function
-
+// click outside — close dropdowns and calculator hints
 html.addEventListener("click", function (e) {
-  if (e.target.tagName !== "HTML" || !e.target.tagName == "BODY") {
-    menu.classList.remove("_active");
-    arrow.classList.remove("_active");
-    menulink.classList.remove("_activeArrow");
-    arrowRotate.classList.remove("_active");
-    document.querySelector(".form__modal-carbon").classList.remove("_active");
-    document.querySelector(".form__modal-carbon-second").classList.remove("_active");
-
-  }
+  closeAllSubmenus();
+  let carbonHint = document.querySelector(".form__modal-carbon");
+  let carbonHintSecond = document.querySelector(".form__modal-carbon-second");
+  if (carbonHint) carbonHint.classList.remove("_active");
+  if (carbonHintSecond) carbonHintSecond.classList.remove("_active");
 });
 
 // calculator
@@ -63,9 +70,9 @@ if (document.querySelector(".section__calculator")) {
     btnXo.forEach((item) => {
       item.addEventListener("click", () => {
         btnXo.forEach((item) => {
-          item.style.backgroundColor = "rgb(211, 241, 170)";
+          item.style.backgroundColor = "rgb(228, 245, 243)";
         });
-        item.style.backgroundColor = "rgb(140, 211, 41)";
+        item.style.backgroundColor = "rgb(255, 111, 89)";
         xo.push(item.value);
         result.innerHTML = "";
         event.preventDefault();
@@ -100,7 +107,7 @@ if (document.querySelector(".section__calculator")) {
     carbohydrates.value = "";
     totalWeight.value = "";
     btnXo.forEach((item) => {
-      item.style.backgroundColor = "#d3f1aa";
+      item.style.backgroundColor = "rgb(228, 245, 243)";
       btnResult.setAttribute("disabled", "");
     });
     massive = [];
@@ -153,8 +160,8 @@ if (document.querySelector(".section__calculator")) {
       carbohydrates.value > 100 ||
       carbohydrates.value < 1 ||
       totalWeight.value.length < 2 ||
-      (btn1.style.backgroundColor !== "rgb(140, 211, 41)") &
-        (btn2.style.backgroundColor !== "rgb(140, 211, 41)"));
+      (btn1.style.backgroundColor !== "rgb(255, 111, 89)") &
+        (btn2.style.backgroundColor !== "rgb(255, 111, 89)"));
 
   carbohydrates.addEventListener("input", checking);
   totalWeight.addEventListener("input", checking);
@@ -173,3 +180,30 @@ if (document.querySelector(".section__calculator")) {
 
   //  btn1.addEventListener("click",checkInput)
 }
+
+// share bar
+document.querySelectorAll(".share-bar__btn").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    let type = btn.dataset.share;
+    let url = encodeURIComponent(window.location.href);
+    let title = encodeURIComponent(document.title);
+    let shareLinks = {
+      facebook: `https://www.facebook.com/sharer/sharer.php?u=${url}`,
+      telegram: `https://t.me/share/url?url=${url}&text=${title}`,
+      viber: `viber://forward?text=${title}%20${url}`,
+    };
+    if (type === "copy") {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        let original = btn.textContent;
+        btn.classList.add("_copied");
+        btn.textContent = "Посилання скопійовано!";
+        setTimeout(() => {
+          btn.classList.remove("_copied");
+          btn.textContent = original;
+        }, 2000);
+      });
+    } else if (shareLinks[type]) {
+      window.open(shareLinks[type], "_blank", "noopener,noreferrer");
+    }
+  });
+});

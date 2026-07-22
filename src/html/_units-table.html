@@ -1,6 +1,24 @@
-<section class="section__table ">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Про діабет", "item": "https://diabetinfo.example/index.html"},
+    {"@type": "ListItem", "position": 2, "name": "Таблиця ХО", "item": "https://diabetinfo.example/table.html"}
+  ]
+}
+</script>
+
+<section class="section__table global-section">
     <div class="table__container">
+        <div class="breadcrumbs">
+            <a href="index.html">Про діабет</a><span>→</span><span>Таблиця ХО</span>
+        </div>
         <h1 class="table__title title">Таблиця хлібних одиниць</h1>
+        <div class="page-hero__lead">Орієнтовний вміст однієї хлібної одиниці (ХО) у
+            найпоширеніших продуктах — за категоріями. Що таке ХО і як нею користуватись, читайте на сторінці <a
+                href="units.html">"Хлібна одиниця"</a>, а швидко порахувати ХО за вагою продукту можна в <a
+                href="calculator.html">калькуляторі</a>.</div>
         <div class="table__items">
             <div class="table__item">
                 <h2 class="table__name">Крупи, картопля, макарони:</h2>
@@ -543,6 +561,14 @@
                     </tr>
               </table>
             </div>
+        </div>
+
+        <div class="share-bar">
+            <span class="share-bar__label">Поділитися:</span>
+            <button class="share-bar__btn" data-share="facebook">Facebook</button>
+            <button class="share-bar__btn" data-share="telegram">Telegram</button>
+            <button class="share-bar__btn" data-share="viber">Viber</button>
+            <button class="share-bar__btn" data-share="copy">Скопіювати посилання</button>
         </div>
     </div>
 </section>

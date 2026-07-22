@@ -15,6 +15,7 @@ let path = {
         js: source_folder + '/js/scripts.js',
         img: source_folder + '/img/**/*.+(png|jpg|jpeg|ico|svg|webp)',
         fonts: source_folder + '/fonts/*',
+        other: [source_folder + '/robots.txt', source_folder + '/sitemap.xml', source_folder + '/site.webmanifest'],
     },
     watch: {
         html: source_folder + '/**/*.html',
@@ -22,6 +23,7 @@ let path = {
         js: source_folder + '/js/**/*.js',
         img: source_folder + '/img/**/*.+(png|jpg|jpeg|ico|svg|webp)',
         fonts: source_folder + '/fonts/*',
+        other: [source_folder + '/robots.txt', source_folder + '/sitemap.xml', source_folder + '/site.webmanifest'],
     },
     clean: './' + project_folder + '/',
 }
@@ -66,6 +68,11 @@ function images() {
 // Fonts
 function fonts() {
     return src(path.src.fonts).pipe(dest(path.build.fonts)).pipe(browsersync.stream())
+}
+
+// Other root files (robots.txt, sitemap.xml, site.webmanifest)
+function other() {
+    return src(path.src.other).pipe(dest(path.build.html))
 }
 
 // Images Compress
@@ -132,6 +139,7 @@ function watchFiles(params) {
     gulp.watch([path.watch.js], js)
     gulp.watch([path.watch.img], images)
     gulp.watch([path.watch.fonts], fonts)
+    gulp.watch([path.watch.other], other)
 }
 
 // Clean
@@ -142,7 +150,7 @@ function clean(params) {
 // let build = gulp.series(clean, gulp.parallel(html, js, css, images, fonts))
 
 // Without clean build
-let build = gulp.series(gulp.parallel(html, js, css, images, fonts))
+let build = gulp.series(gulp.parallel(html, js, css, images, fonts, other))
 let watch = gulp.parallel(build, watchFiles, browserSync)
 
 exports.img = img
@@ -151,6 +159,7 @@ exports.js = js
 exports.html = html
 exports.css = css
 exports.fonts = fonts
+exports.other = other
 exports.build = build
 exports.watch = watch
 exports.default = watch

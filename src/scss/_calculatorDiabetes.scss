@@ -14,16 +14,19 @@
   &__item {
     flex: 0 1 60%;
     &:first-child {
-      box-shadow: 0px 5px 9px 0px rgba(0, 0, 0, 0.75);
+      background-color: $surface;
+      box-shadow: $shadow;
+      border-radius: 20px;
       padding: 30px;
       @include md {
-        padding: 10px;
-        box-shadow: 0px 4px 9px -2px rgba(0, 0, 0, 0.75);
+        padding: 15px;
       }
     }
     &:last-child {
       flex: 0 1 40%;
-      box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.75);
+      box-shadow: $shadow;
+      border-radius: 20px;
+      overflow: hidden;
       @include md {
         display: none;
       }
@@ -78,11 +81,11 @@
     width: 20%;
     min-height: 50px;
     font-size: 18px;
-    background-color: rgb(211, 241, 170);
+    background-color: #e4f5f3;
     transition: 0.3s ease;
-    border-radius: 5px;
+    border-radius: 8px;
     &:hover {
-      background-color: rgb(185, 221, 135);
+      background-color: #cdeae7;
     }
     @include md {
       width: 50%;
@@ -97,11 +100,11 @@
     width: 20%;
     min-height: 50px;
     font-size: 18px;
-    background-color: rgb(211, 241, 170);
+    background-color: #e4f5f3;
     transition: 0.3s ease;
-    border-radius: 5px;
+    border-radius: 8px;
     &:hover {
-      background-color: rgb(185, 221, 135);
+      background-color: #cdeae7;
     }
     @include md {
       width: 50%;
@@ -116,8 +119,8 @@
     gap: 20px;
     width: 50%;
     height: 50px;
-    border-top: 1px solid rgb(211, 241, 170);
-    border-bottom: 1px solid rgb(211, 241, 170);
+    border-top: 1px solid $border;
+    border-bottom: 1px solid $border;
     @include md {
       width: 50%;
     }
@@ -141,7 +144,7 @@
     position: relative;
   }
   &__modal-carbon {
-    border-radius: 5px;
+    border-radius: 8px;
     letter-spacing: 0.3px;
     position: absolute;
     bottom: 30px;
@@ -175,22 +178,24 @@
   }
 
   &__input {
-    background-color: rgb(230, 251, 200);
+    background-color: #eef8f6;
   }
 
   &__resultBtn {
-    border-radius: 5px;
+    border-radius: 8px;
     min-height: 50px;
-    background-color: rgb(211, 241, 170);
+    background-color: $accent;
+    color: $colorWhite;
     font-size: 22px;
     letter-spacing: 1px;
     transition: 0.3s ease;
     &:hover {
-      background-color: rgb(185, 221, 135);
+      background-color: $accentDark;
     }
-    &._active {
-      background-color: rgb(230, 251, 200);
-      color: lightgray;
+    &:disabled {
+      background-color: #eef8f6;
+      color: $muted;
+      cursor: not-allowed;
     }
   }
 
@@ -220,7 +225,7 @@
   margin-bottom: 20px;
 
   &:focus {
-    border: 1px solid rgb(124, 231, 241);
+    border: 1px solid $brand;
   }
 }
 
@@ -236,5 +241,5 @@ input[type="number"]:focus {
   -moz-appearance: textfield;
 }
 .form__resultBtn[disabled]:hover {
-  background-color: #d3f1aa;
+  background-color: #eef8f6;
 }

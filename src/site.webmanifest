@@ -1,0 +1,17 @@
+{
+  "name": "DiabetInfo — все про цукровий діабет",
+  "short_name": "DiabetInfo",
+  "description": "Інформаційний портал про цукровий діабет: типи, симптоми, причини, діагностика та харчування.",
+  "start_url": "index.html",
+  "display": "standalone",
+  "lang": "uk",
+  "background_color": "#F5FBF9",
+  "theme_color": "#0E7C7B",
+  "icons": [
+    {
+      "src": "img/header/logo.png",
+      "sizes": "any",
+      "type": "image/png"
+    }
+  ]
+}

@@ -30,7 +30,7 @@
 
 .title {
   font-weight: 700;
-  color: $primary;
+  color: $brand;
   font-size: 50px;
   line-height: 150%;
   &:not(:last-child) {
@@ -45,7 +45,7 @@
   }
 }
 .subtitle {
-  font-family: Poppins;
+  font-family: $fontMain;
   font-weight: 400;
   font-size: 18px;
   line-height: 130%;
@@ -61,13 +61,10 @@
   @include lg{
     text-align: start;
   }
-  @include md {
-    font-size: 17px;
-  }
 }
 
 .global-section {
-  padding: 100px 0px;
+  padding: 60px 0px;
   @include lg {
     padding: 50px 0px;
   }
