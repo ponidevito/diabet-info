@@ -107,7 +107,8 @@
           opacity: 0;
           visibility: hidden;
           position: absolute;
-          width: 200px;
+          width: max-content;
+          max-width: 280px;
           left: 0px;
           font-size: 16px;
           top: 30px;
@@ -145,7 +146,6 @@
             width: 100%;
             cursor: pointer;
 
-            transition: 0.2s ease;
             @include md {
               padding: 10px 0;
             }
@@ -163,7 +163,7 @@
             width: 100%;
             padding: 10px 12px;
             color: $primary;
-            white-space: nowrap;
+            white-space: normal;
 
             &[aria-current="page"] {
               color: $accent;
