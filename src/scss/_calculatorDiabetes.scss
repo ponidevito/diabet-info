@@ -150,7 +150,9 @@
     bottom: 30px;
     left: 20px;
     width: 250px;
-    height: 30px;
+    min-height: 30px;
+    padding: 6px 10px;
+    text-align: center;
     opacity: 0;
     z-index: -1;
     display: flex;
@@ -159,6 +161,7 @@
     transition: 0.3s ease;
     @include xs {
       font-size: 14px;
+      width: 220px;
     }
     &._active {
       color: $colorWhite;
@@ -200,7 +203,7 @@
   }
 
   &__result {
-    font-size: 50px;
+    font-size: 30px;
     margin-left: auto;
     @media (max-width: 1159.98px) {
       font-size: 34px;
@@ -212,7 +215,7 @@
       min-width: 95px;
     }
     @include xs {
-      font-size: 40px;
+      font-size: 22px;
     }
   }
 }
@@ -224,9 +227,7 @@
   min-height: 50px;
   margin-bottom: 20px;
 
-  &:focus {
-    border: 1px solid $brand;
-  }
+
 }
 
 input[type="number"]::-webkit-outer-spin-button,
@@ -235,8 +236,8 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 input[type="number"],
-input[type="number"]:hover,
-input[type="number"]:focus {
+input[type="number"]:hover
+ {
   appearance: none;
   -moz-appearance: textfield;
 }

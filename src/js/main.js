@@ -88,67 +88,71 @@ if (document.querySelector(".section__calculator")) {
   let result = document.querySelector(".form__result");
   let btn1 = document.querySelector(".form__btn1");
   let btn2 = document.querySelector(".form__btn2");
-  let massive = [];
-  let mass = [];
-  let xo = [];
-  let number = [];
+  let selectedXo = null;
 
   let form = document.forms["form"];
   let carbohydrates = form.carbohydrates;
   let totalWeight = form.totalWeight;
 
-  function addInfo(e) {
+  function addInfo() {
     btnXo.forEach((item) => {
-      item.addEventListener("click", () => {
-        btnXo.forEach((item) => {
-          item.style.backgroundColor = "rgb(228, 245, 243)";
-          item.setAttribute("aria-pressed", "false");
+      item.addEventListener("click", (event) => {
+        btnXo.forEach((btn) => {
+          btn.style.backgroundColor = "rgb(228, 245, 243)";
+          btn.style.color = "";
+          btn.setAttribute("aria-pressed", "false");
         });
-        item.style.backgroundColor = "rgb(255, 111, 89)";
+        item.style.backgroundColor = "rgb(205, 56, 29)";
+        item.style.color = "rgb(255, 255, 255)";
         item.setAttribute("aria-pressed", "true");
-        xo.push(item.value);
-        result.innerHTML = "";
+        selectedXo = parseFloat(item.value);
+        result.textContent = "";
         event.preventDefault();
       });
     });
-    return true;
   }
   addInfo();
 
-  if (document.querySelector(".section__calculator")) {
-  }
-
-  function check() {
-    mass.push(carbohydrates.value);
-    number.push(totalWeight.value);
-
-    let sum = (mass / xo) * number;
-    massive.push(sum);
-    let a = Array.from(massive.toString(), Number);
-    let finalSum = a.join("");
-    let summa = parseFloat(finalSum);
-
-    result.textContent += `${summa.toFixed(2) / 100} хо `;
-
+  function calculate(event) {
     event.preventDefault();
+
+    const carbValue = parseFloat(carbohydrates.value);
+    const totalWeightValue = parseFloat(totalWeight.value);
+
+    if (
+      !selectedXo ||
+      isNaN(carbValue) ||
+      isNaN(totalWeightValue) ||
+      carbValue === 0 ||
+      totalWeightValue === 0
+    ) {
+      result.textContent = "Помилка: перевірте введені дані";
+      return;
+    }
+
+    const summa = (carbValue / selectedXo) * totalWeightValue;
+
+    if (!isFinite(summa)) {
+      result.textContent = "Помилка: неможливо порахувати";
+      return;
+    }
+
+    result.textContent = `${(summa / 100).toFixed(2)} хо`;
     resetAll();
-    return true;
+    carbohydrates.style.border = "1px solid rgb(124, 231, 241)";
   }
-  btnResult.addEventListener("click", check);
+  btnResult.addEventListener("click", calculate);
 
   function resetAll() {
     carbohydrates.value = "";
     totalWeight.value = "";
     btnXo.forEach((item) => {
       item.style.backgroundColor = "rgb(228, 245, 243)";
+      item.style.color = "";
       item.setAttribute("aria-pressed", "false");
-      btnResult.setAttribute("disabled", "");
     });
-    massive = [];
-    mass = [];
-    xo = [];
-    number = [];
-    return true;
+    btnResult.setAttribute("disabled", "");
+    selectedXo = null;
   }
 
   let carbonRegExp = /^[0-9]{1,20}$/;
@@ -158,27 +162,22 @@ if (document.querySelector(".section__calculator")) {
       carbohydrates.style.border = "1px solid rgb(124, 231, 241)";
       carbohydrates.setAttribute("aria-invalid", "false");
 
-      if (carbohydrates.value > 100 ) {
+      if (carbohydrates.value > 100) {
         document.querySelector(".form__modal-carbon").classList.add("_active");
         carbohydrates.setAttribute("aria-invalid", "true");
-      }
-     else if(carbohydrates.value < 1 ){
-      document.querySelector(".form__modal-carbon-second").classList.add("_active");
+      } else if (carbohydrates.value < 1) {
+        document.querySelector(".form__modal-carbon-second").classList.add("_active");
         carbohydrates.setAttribute("aria-invalid", "true");
+      } else {
+        document.querySelector(".form__modal-carbon").classList.remove("_active");
+        document.querySelector(".form__modal-carbon-second").classList.remove("_active");
       }
-
-       else {
-        document
-          .querySelector(".form__modal-carbon")
-          .classList.remove("_active");
-          document.querySelector(".form__modal-carbon-second").classList.remove("_active");
-      }
-
     } else {
       carbohydrates.style.border = "1px solid red";
       carbohydrates.setAttribute("aria-invalid", "true");
     }
   };
+
   let totalRegExp = /^[0-9]{2,20}$/;
   totalWeight.oninput = () => {
     let loginValid = totalRegExp.test(totalWeight.value);
@@ -197,25 +196,12 @@ if (document.querySelector(".section__calculator")) {
       carbohydrates.value > 100 ||
       carbohydrates.value < 1 ||
       totalWeight.value.length < 2 ||
-      (btn1.style.backgroundColor !== "rgb(255, 111, 89)") &
-        (btn2.style.backgroundColor !== "rgb(255, 111, 89)"));
+      !selectedXo);
 
   carbohydrates.addEventListener("input", checking);
   totalWeight.addEventListener("input", checking);
   btn1.addEventListener("click", checking);
   btn2.addEventListener("click", checking);
-
-  // function checkInput() {
-  //   if (carbohydrates.value.length > 2) {
-  //     document.querySelector(".form__modal-carbon").classList.add("_active")
-  //   }
-  //   else{
-  //     document.querySelector(".form__modal-carbon").classList.remove("_active")
-  //   }
-
-  // }
-
-  //  btn1.addEventListener("click",checkInput)
 }
 
 // share bar

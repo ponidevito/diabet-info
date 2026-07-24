@@ -4,13 +4,21 @@
   }
 }
 
-.table {
+.table__wrapper {
+  display: block;
   width: 100%;
   margin-bottom: 30px;
-  border: 1px solid $border;
+  overflow-x: auto;
+  border-left: 1px solid $border;
+  border-right: 1px solid $border;
   border-radius: 12px;
-  overflow: hidden;
-  box-shadow: $shadowSm;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
   &__title {
     &:not(:last-child) {
       margin-bottom: 40px;
@@ -32,7 +40,6 @@
   }
 }
 tr {
-  display: flex;
   &:nth-child(odd) {
     background: $background;
   }
@@ -40,7 +47,7 @@ tr {
 td,
 th {
   border-bottom: 1px solid $border;
-  flex: 0 1 50%;
+  white-space: nowrap;
   text-align: left;
   padding: 15px;
 }

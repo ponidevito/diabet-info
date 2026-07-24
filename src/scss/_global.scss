@@ -62,7 +62,7 @@ html {
   &:not(:last-child) {
     margin-bottom: 20px;
   }
-  @include lg{
+  @include lg {
     text-align: start;
   }
 }
@@ -75,17 +75,27 @@ html {
   @include md {
     padding: 10px 0px;
   }
+  .page-hero__lead a,
   p a {
-    transition: .2s ease;
+    transition: 0.2s ease;
     color: #0e7c7b;
     text-decoration: underline;
-
   }
-    p a:hover {
-    transition: .2s ease;
+  .page-hero__lead a:hover,
+  p a:hover {
+    transition: 0.2s ease;
     text-decoration: none;
-    
   }
+}
+
+p a {
+  transition: 0.2s ease;
+  color: #0e7c7b;
+  text-decoration: underline;
+}
+p a:hover {
+  transition: 0.2s ease;
+  text-decoration: none;
 }
 
 // Animations
@@ -103,7 +113,7 @@ html {
 // Accessibility: visible keyboard-focus indicator sitewide
 a:focus-visible,
 button:focus-visible,
-input:focus-visible,
+
 [tabindex]:focus-visible {
   outline: 2px solid $accent;
   outline-offset: 3px;

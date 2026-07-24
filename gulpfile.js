@@ -139,7 +139,7 @@ function watchFiles(params) {
     gulp.watch([path.watch.js], js)
     gulp.watch([path.watch.img], images)
     gulp.watch([path.watch.fonts], fonts)
-    gulp.watch([path.watch.other], other)
+    gulp.watch(path.watch.other, other)
 }
 
 // Clean

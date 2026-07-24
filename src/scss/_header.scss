@@ -103,7 +103,6 @@
           }
         }
         .submenu {
-          padding: 8px;
           opacity: 0;
           visibility: hidden;
           position: absolute;
@@ -119,6 +118,7 @@
           box-shadow: $shadow;
           transition: 0.3s ease;
           border-radius: 12px;
+
           @include md {
             font-size: 20px;
             top: 40px;
@@ -142,10 +142,16 @@
             visibility: visible;
           }
           &__item {
-            border-radius: 8px;
             width: 100%;
             cursor: pointer;
-
+            &:first-child {
+              border-top-left-radius: 8px;
+              border-top-right-radius: 8px;
+            }
+            &:last-child {
+              border-bottom-left-radius: 8px;
+              border-bottom-right-radius: 8px;
+            }
             @include md {
               padding: 10px 0;
             }
@@ -242,6 +248,7 @@
       }
     }
     &__linkSub {
+      font-size: 18px;
       background: none;
       border: none;
       display: inline-flex;
