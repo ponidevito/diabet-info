@@ -155,8 +155,38 @@ if (document.querySelector(".section__calculator")) {
     selectedXo = null;
   }
 
-  let carbonRegExp = /^[0-9]{1,20}$/;
+  const carbonAllowedKeys = [
+    "Backspace",
+    "Delete",
+    "Tab",
+    "ArrowLeft",
+    "ArrowRight",
+    "Home",
+    "End",
+    "Enter",
+  ];
+  carbohydrates.addEventListener("keydown", (event) => {
+    if (event.ctrlKey || event.metaKey || carbonAllowedKeys.includes(event.key)) {
+      return;
+    }
+    if (!/^[0-9]$/.test(event.key)) {
+      event.preventDefault();
+      return;
+    }
+    if (
+      carbohydrates.value.length >= 2 &&
+      carbohydrates.selectionStart === carbohydrates.selectionEnd
+    ) {
+      event.preventDefault();
+    }
+  });
+
+  let carbonRegExp = /^[0-9]{1,2}$/;
   carbohydrates.oninput = () => {
+    let digitsOnly = carbohydrates.value.replace(/\D/g, "").slice(0, 2);
+    if (carbohydrates.value !== digitsOnly) {
+      carbohydrates.value = digitsOnly;
+    }
     let loginValid = carbonRegExp.test(carbohydrates.value);
     if (loginValid) {
       carbohydrates.style.border = "1px solid rgb(124, 231, 241)";
