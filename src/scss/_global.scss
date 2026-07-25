@@ -76,12 +76,14 @@ html {
     padding: 10px 0px;
   }
   .page-hero__lead a,
+  .callout a,
   p a {
     transition: 0.2s ease;
     color: #0e7c7b;
     text-decoration: underline;
   }
   .page-hero__lead a:hover,
+  .callout a:hover,
   p a:hover {
     transition: 0.2s ease;
     text-decoration: none;
