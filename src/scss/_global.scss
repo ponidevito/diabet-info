@@ -76,6 +76,7 @@ html {
   @include md {
     padding: 10px 0px;
   }
+  .accordion .accordion__item .content__text a,
   .subtitle a,
   .page-hero__lead a,
   .callout a,
@@ -84,6 +85,7 @@ html {
     color: #0e7c7b;
     text-decoration: underline;
   }
+  .accordion .accordion__item .content__text a:hover,
   .subtitle a:hover,
   .page-hero__lead a:hover,
   .callout a:hover,
