@@ -76,6 +76,7 @@ html {
   @include md {
     padding: 10px 0px;
   }
+  .subtitle a,
   .page-hero__lead a,
   .callout a,
   p a {
@@ -83,6 +84,7 @@ html {
     color: #0e7c7b;
     text-decoration: underline;
   }
+  .subtitle a:hover,
   .page-hero__lead a:hover,
   .callout a:hover,
   p a:hover {
