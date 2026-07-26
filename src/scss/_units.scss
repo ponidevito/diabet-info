@@ -14,18 +14,7 @@
   }
 
   &__item {
-    flex: 0 1 50%;
-    @include md {
-      flex: 1 1 100%;
-    }
-    &:last-child {
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      @include lg {
-        align-items: center;
-      }
-    }
+    flex: 1 1 100%;
   }
 
   &__content {
@@ -52,9 +41,9 @@
     img {
       box-shadow: $shadow;
       border-radius: 16px;
-      max-width: 470px;
+      max-width: 100%;
+
       @include sm {
-        max-width: 100%;
         width: 100%;
       }
     }
