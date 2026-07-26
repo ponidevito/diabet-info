@@ -1,15 +1,135 @@
-# diabet-info
-diabet -info 
+# 🩺 Diabet Info
 
-Інформаційний сайт , що містить основну інформацію про таке захворювання як діабет першого та другого типів та калькулятор
-для підрахунку хлібних одиниць !
+A modern responsive informational website about diabetes, built with HTML, SCSS, JavaScript, and Gulp. The project focuses on accessibility, SEO, performance optimization, and responsive design.
 
+🌐 **Live Demo:** https://diabet-info.top
 
-<a href="https://ponidevito.github.io/diabetInfo/" rel="nofollow">👀 Demo</a>
+---
 
-![diabetInfo](https://user-images.githubusercontent.com/48261771/196414789-10d92b5c-a95e-4e05-bb41-124e516ee49f.PNG)
+## 📌 Overview
 
-Kалькулятор для підрахунку хлібних одиниць ! <a href="https://ponidevito.github.io/diabetInfo/calculator.html" rel="nofollow">Calculator 👀</a>
+Diabet Info is an educational website designed to provide reliable information about diabetes in a clear and user-friendly way. The project demonstrates modern frontend development practices, responsive layouts, SEO optimization, and automated build processes.
 
-![calculator](https://user-images.githubusercontent.com/48261771/196415233-3ca3e131-768e-4719-aca6-a2bf9e323c09.PNG)
+---
 
+## ✨ Features
+
+- 📱 Fully responsive design
+- ⚡ Fast loading and optimized assets
+- 🔍 SEO-friendly structure
+- 🗺 XML Sitemap
+- 🤖 Robots.txt
+- ♿ Semantic HTML5 markup
+- 🎨 SCSS architecture
+- 🚀 Automated build process with Gulp
+- 🔒 HTTPS deployment via Netlify
+- 🌍 Custom domain support
+
+---
+
+## 🛠 Technologies
+
+- HTML5
+- CSS3
+- SCSS (Sass)
+- JavaScript (ES6)
+- Gulp
+- Git
+- GitHub
+- Netlify
+
+---
+
+## 📂 Project Structure
+
+```text
+.
+├── src/
+│   ├── css/
+│   ├── js/
+│   ├── img/
+│   └── *.html
+│
+├── build/
+│
+├── gulpfile.js
+├── package.json
+└── README.md
+```
+
+---
+
+## 🚀 Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/ponidevito/diabet-info.git
+```
+
+Go to the project folder
+
+```bash
+cd diabet-info
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Run development mode
+
+```bash
+gulp
+```
+
+Build the project
+
+```bash
+gulp build
+```
+
+---
+
+## 🌐 Deployment
+
+The website is deployed on **Netlify** using a custom domain.
+
+**Production**
+
+https://diabet-info.top
+
+---
+
+## 📈 SEO
+
+The project includes:
+
+- Semantic HTML
+- Meta tags
+- Open Graph tags
+- Sitemap.xml
+- Robots.txt
+- Canonical URLs
+- Optimized images
+- Mobile-friendly layout
+
+---
+
+## 💻 Author
+
+**Oleg Kravchuk**
+
+GitHub:
+https://github.com/ponidevito
+
+LinkedIn:
+https://www.linkedin.com/in/oleg-kravchuk/
+
+---
+
+## 📄 License
+
+This project is available for educational and portfolio purposes.
