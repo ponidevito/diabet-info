@@ -242,6 +242,78 @@
   }
 }
 
+// Author bio
+.author-bio {
+  display: flex;
+  gap: 16px;
+  background-color: $surface;
+  border: 1px solid $border;
+  border-radius: 16px;
+  padding: 20px 24px;
+  margin: 20px 0;
+  box-shadow: $shadowSm;
+
+  &__avatar {
+    flex: 0 0 auto;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: rgba(14, 124, 123, 0.12);
+    color: $brand;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $fontMain;
+    font-weight: 700;
+    font-size: 15px;
+  }
+  &__name {
+    font-family: $fontMain;
+    font-weight: 700;
+    font-size: 16px;
+    color: $primary;
+    margin-bottom: 6px;
+  }
+  &__role {
+    font-weight: 400;
+    color: $muted;
+  }
+  &__text {
+    font-family: $fontMain;
+    font-size: 14px;
+    line-height: 150%;
+    color: $muted;
+    margin-bottom: 12px;
+  }
+  &__footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  &__links {
+    display: flex;
+    gap: 14px;
+  }
+  &__link {
+    font-family: $fontMain;
+    font-size: 14px;
+    font-weight: 600;
+    color: $brand;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    &:hover {
+      color: $brandDark;
+    }
+  }
+  &__updated {
+    font-family: $fontMain;
+    font-size: 13px;
+    color: $muted;
+  }
+}
+
 // Share bar
 .share-bar {
   display: flex;
@@ -355,7 +427,6 @@
   font-family: $fontMain;
   font-size: 16px;
   color: $muted;
-  max-width: 700px;
   margin-bottom: 18px;
 }
 

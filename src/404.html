@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="noindex, follow">
+    <title>Сторінку не знайдено (404) — DiabetInfo</title>
+    <meta name="description" content="Такої сторінки не існує або її було переміщено. Перейдіть на головну DiabetInfo, щоб знайти інформацію про діабет.">
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="img/favicon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#0E7C7B">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+
+    <link rel="stylesheet" href="./css/style.min.css">
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <!-- Header -->
+    @@include('./html/_header.html')
+
+    <!-- Main Page -->
+    <main class="main" id="main-content">
+
+        <section class="section__about global-section">
+            <div class="about__container">
+                <div class="page-hero">
+                    <h1 class="about__title title">Сторінку не знайдено</h1>
+                    <div class="page-hero__lead">Схоже, такої сторінки не існує або її було переміщено. Скористайтесь
+                        посиланнями нижче, щоб знайти потрібну інформацію про діабет.</div>
+                </div>
+
+                <div class="section-heading">
+                    <h2>Популярні розділи</h2>
+                </div>
+                <div class="hub-grid">
+                    <a href="/" class="hub-card">
+                        <div class="hub-card__icon" aria-hidden="true">🏠</div>
+                        <div class="hub-card__title">Головна</div>
+                        <div class="hub-card__text">Все про цукровий діабет: типи, симптоми, причини і лікування.</div>
+                        <span class="hub-card__more" aria-hidden="true">Читати далі →</span>
+                    </a>
+                    <a href="symptoms.html" class="hub-card">
+                        <div class="hub-card__icon" aria-hidden="true">🩺</div>
+                        <div class="hub-card__title">Симптоми</div>
+                        <div class="hub-card__text">Ранні ознаки діабету 1 і 2 типу.</div>
+                        <span class="hub-card__more" aria-hidden="true">Читати далі →</span>
+                    </a>
+                    <a href="faq.html" class="hub-card">
+                        <div class="hub-card__icon" aria-hidden="true">💬</div>
+                        <div class="hub-card__title">FAQ</div>
+                        <div class="hub-card__text">Часті запитання про діабет.</div>
+                        <span class="hub-card__more" aria-hidden="true">Читати далі →</span>
+                    </a>
+                    <a href="calculator.html" class="hub-card">
+                        <div class="hub-card__icon" aria-hidden="true">🧮</div>
+                        <div class="hub-card__title">Калькулятор ХО</div>
+                        <div class="hub-card__text">Швидкий підрахунок хлібних одиниць.</div>
+                        <span class="hub-card__more" aria-hidden="true">Читати далі →</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    @@include('./html/_footer.html')
+
+    </div>
+
+    <script src="./js/scripts.min.js"></script>
+</body>
+
+</html>

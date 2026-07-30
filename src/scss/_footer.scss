@@ -34,6 +34,23 @@
     max-width: 320px;
   }
 
+  &__contact {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-family: $fontMain;
+    font-size: 13px;
+    color: $muted;
+  }
+
+  &__contact-link {
+    color: $brand;
+    font-weight: 600;
+    &:hover {
+      color: $accent;
+    }
+  }
+
   &__col {
     display: flex;
     flex-direction: column;
