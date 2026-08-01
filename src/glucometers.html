@@ -6,6 +6,10 @@
         "title": "Глюкометри: види приладів та принцип роботи — DiabetInfo",
         "description": "Як працює глюкометр, чим фотометричні прилади відрізняються від електрохімічних, що таке CGM і flash-моніторинг глюкози та на що звертати увагу при виборі.",
         "path": "glucometers.html",
+        "ukPath": "glucometers.html",
+        "enPath": "en/glucometers.html",
+        "esPath": "es/glucometers.html",
+        "locale": "uk_UA",
         "ogImage": "img/diabet-info.webp"
     })
 </head>
@@ -14,7 +18,7 @@
     <div class="wrapper">
 
         <!-- Header -->
-    @@include('./html/_header.html')
+    @@include('./html/_header.html', {"enPath": "en/glucometers.html", "esPath": "es/glucometers.html"})
 
     <!-- Main Page -->
     <main class="main" id="main-content">
@@ -29,7 +33,7 @@
 
     </div>
 
-    <script src="./js/scripts.min.js"></script>
+    <script src="/js/scripts.min.js"></script>
 </body>
 
 </html>

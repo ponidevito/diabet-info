@@ -6,6 +6,10 @@
         "title": "Політика конфіденційності — DiabetInfo",
         "description": "Яку інформацію збирає сайт DiabetInfo, як використовуються файли cookie та реклама, і як керувати своїми налаштуваннями приватності.",
         "path": "privacy.html",
+        "ukPath": "privacy.html",
+        "enPath": "en/privacy.html",
+        "esPath": "es/privacy.html",
+        "locale": "uk_UA",
         "ogImage": "img/diabet-info.webp"
     })
 </head>
@@ -14,7 +18,7 @@
     <div class="wrapper">
 
         <!-- Header -->
-    @@include('./html/_header.html')
+    @@include('./html/_header.html', {"enPath": "en/privacy.html", "esPath": "es/privacy.html"})
 
     <!-- Main Page -->
     <main class="main" id="main-content">
@@ -29,7 +33,7 @@
 
     </div>
 
-    <script src="./js/scripts.min.js"></script>
+    <script src="/js/scripts.min.js"></script>
 </body>
 
 </html>

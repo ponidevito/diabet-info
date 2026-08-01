@@ -6,6 +6,10 @@
         "title": "Хлібна одиниця: що це і навіщо вона потрібна — DiabetInfo",
         "description": "Що таке хлібна одиниця (ХО), як вона допомагає оцінювати вуглеводи в їжі та де подивитись таблицю ХО і скористатись калькулятором.",
         "path": "units.html",
+        "ukPath": "units.html",
+        "enPath": "en/units.html",
+        "esPath": "es/units.html",
+        "locale": "uk_UA",
         "ogImage": "img/unit__about/eat.png"
     })
 </head>
@@ -14,7 +18,7 @@
     <div class="wrapper">
 
         <!-- Header -->
-    @@include('./html/_header.html')
+    @@include('./html/_header.html', {"enPath": "en/units.html", "esPath": "es/units.html"})
 
     <!-- Main Page -->
     <main class="main" id="main-content">
@@ -29,7 +33,7 @@
 
     </div>
 
-    <script src="./js/scripts.min.js"></script>
+    <script src="/js/scripts.min.js"></script>
 </body>
 
 </html>

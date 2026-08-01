@@ -6,6 +6,10 @@
         "title": "Таблиця хлібних одиниць (ХО) продуктів — DiabetInfo",
         "description": "Таблиця вмісту хлібних одиниць у крупах, фруктах, овочах, молочних продуктах, хлібобулочних виробах, солодощах і фастфуді.",
         "path": "table.html",
+        "ukPath": "table.html",
+        "enPath": "en/table.html",
+        "esPath": "es/table.html",
+        "locale": "uk_UA",
         "ogImage": "img/unit__about/eat.png"
     })
 </head>
@@ -15,7 +19,7 @@
     <div class="wrapper">
 
         <!-- Header -->
-    @@include('./html/_header.html')
+    @@include('./html/_header.html', {"enPath": "en/table.html", "esPath": "es/table.html"})
 
     <!-- Main Page -->
     <main class="main" id="main-content">
@@ -34,7 +38,7 @@
 
 
 
-    <script src="./js/scripts.min.js"></script>
+    <script src="/js/scripts.min.js"></script>
 </body>
 
 

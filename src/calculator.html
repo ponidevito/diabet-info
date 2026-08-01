@@ -6,6 +6,10 @@
         "title": "Калькулятор хлібних одиниць (ХО) — DiabetInfo",
         "description": "Онлайн-калькулятор для швидкого підрахунку хлібних одиниць за вагою продукту та вмістом вуглеводів у 100 г.",
         "path": "calculator.html",
+        "ukPath": "calculator.html",
+        "enPath": "en/calculator.html",
+        "esPath": "es/calculator.html",
+        "locale": "uk_UA",
         "ogImage": "img/calculator/calculator.jpg"
     })
 </head>
@@ -14,7 +18,7 @@
     <div class="wrapper">
 
         <!-- Header -->
-    @@include('./html/_header.html')
+    @@include('./html/_header.html', {"enPath": "en/calculator.html", "esPath": "es/calculator.html"})
 
     <!-- Main Page -->
     <main class="main" id="main-content">
@@ -33,7 +37,7 @@
 
 
 
-    <script src="./js/scripts.min.js"></script>
+    <script src="/js/scripts.min.js"></script>
 </body>
 
 

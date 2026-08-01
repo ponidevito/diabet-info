@@ -6,6 +6,10 @@
         "title": "Гестаційний діабет: причини, симптоми, ризики — DiabetInfo",
         "description": "Гестаційний діабет: чому виникає під час вагітності, наскільки поширений, які фактори ризику і можливі наслідки для матері та дитини.",
         "path": "gestational.html",
+        "ukPath": "gestational.html",
+        "enPath": "en/gestational.html",
+        "esPath": "es/gestational.html",
+        "locale": "uk_UA",
         "ogImage": "img/diabet-info.webp"
     })
 </head>
@@ -14,7 +18,7 @@
     <div class="wrapper">
 
         <!-- Header -->
-    @@include('./html/_header.html')
+    @@include('./html/_header.html', {"enPath": "en/gestational.html", "esPath": "es/gestational.html"})
 
     <!-- Main Page -->
     <main class="main" id="main-content">
@@ -29,7 +33,7 @@
 
     </div>
 
-    <script src="./js/scripts.min.js"></script>
+    <script src="/js/scripts.min.js"></script>
 </body>
 
 </html>

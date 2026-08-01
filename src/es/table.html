@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    @@include('../html/_seo.html', {
+        "title": "Tabla de Unidades de Pan (UP) — DiabetInfo",
+        "description": "Una tabla del contenido de unidades de pan en cereales, frutas, verduras, lácteos, productos horneados, dulces y comida rápida.",
+        "path": "es/table.html",
+        "ukPath": "table.html",
+        "enPath": "en/table.html",
+        "esPath": "es/table.html",
+        "locale": "es_ES",
+        "ogImage": "img/unit__about/eat.png"
+    })
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <!-- Header -->
+    @@include('../html/_header-es.html', {"ukPath": "table.html", "enPath": "en/table.html"})
+
+    <!-- Main Page -->
+    <main class="main" id="main-content">
+
+             @@include('../html/es/_units-table.html')
+
+    </main>
+
+    <!-- Footer -->
+    @@include('../html/_footer-es.html')
+
+    </div>
+
+    <script src="/js/scripts.min.js"></script>
+</body>
+
+</html>

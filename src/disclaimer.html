@@ -6,6 +6,10 @@
         "title": "Медичний дисклеймер — DiabetInfo",
         "description": "DiabetInfo — суто інформаційний проєкт про діабет. Дізнайтесь, чому матеріали сайту не є медичною консультацією і як правильно ними користуватись.",
         "path": "disclaimer.html",
+        "ukPath": "disclaimer.html",
+        "enPath": "en/disclaimer.html",
+        "esPath": "es/disclaimer.html",
+        "locale": "uk_UA",
         "ogImage": "img/diabet-info.webp"
     })
 </head>
@@ -14,7 +18,7 @@
     <div class="wrapper">
 
         <!-- Header -->
-    @@include('./html/_header.html')
+    @@include('./html/_header.html', {"enPath": "en/disclaimer.html", "esPath": "es/disclaimer.html"})
 
     <!-- Main Page -->
     <main class="main" id="main-content">
@@ -29,7 +33,7 @@
 
     </div>
 
-    <script src="./js/scripts.min.js"></script>
+    <script src="/js/scripts.min.js"></script>
 </body>
 
 </html>

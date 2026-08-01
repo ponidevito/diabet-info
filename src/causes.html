@@ -6,6 +6,10 @@
         "title": "Причини і фактори ризику діабету — DiabetInfo",
         "description": "Що спричиняє діабет 1 і 2 типу: автоімунні механізми, генетика, вага, спосіб життя та інші фактори ризику за даними ВООЗ, CDC і Mayo Clinic.",
         "path": "causes.html",
+        "ukPath": "causes.html",
+        "enPath": "en/causes.html",
+        "esPath": "es/causes.html",
+        "locale": "uk_UA",
         "ogImage": "img/diabet-info.webp"
     })
 </head>
@@ -14,7 +18,7 @@
     <div class="wrapper">
 
         <!-- Header -->
-    @@include('./html/_header.html')
+    @@include('./html/_header.html', {"enPath": "en/causes.html", "esPath": "es/causes.html"})
 
     <!-- Main Page -->
     <main class="main" id="main-content">
@@ -29,7 +33,7 @@
 
     </div>
 
-    <script src="./js/scripts.min.js"></script>
+    <script src="/js/scripts.min.js"></script>
 </body>
 
 </html>

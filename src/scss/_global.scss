@@ -8,7 +8,7 @@
 // global container
 
 [class*="__container"] {
-  max-width: 1160px;
+  max-width: 1400px;
   margin: 0px auto;
   padding: 0px 15px;
   box-sizing: content-box;
@@ -30,6 +30,13 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+html[lang="es"] .faq-es {
+    display: none;
+    @media (max-width:1140px) {
+      display: block;
+    }
 }
 
 .title {

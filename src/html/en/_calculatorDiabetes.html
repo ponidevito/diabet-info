@@ -1,0 +1,81 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "About Diabetes", "item": "https://diabet-info.top/en/"},
+    {"@type": "ListItem", "position": 2, "name": "Bread Unit Calculator", "item": "https://diabet-info.top/en/calculator.html"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Bread Unit (BU) Calculator",
+  "url": "https://diabet-info.top/en/calculator.html",
+  "inLanguage": "en",
+  "datePublished": "2026-07-26",
+  "dateModified": "2026-07-30",
+  "isPartOf": {"@type": "WebSite", "name": "DiabetInfo", "url": "https://diabet-info.top/en/"}
+}
+</script>
+
+<section class="section__calculator global-section">
+    <div class="calculator__container">
+        <div class="breadcrumbs">
+            <a href="/en/">About Diabetes</a><span>→</span><span>Bread Unit Calculator</span>
+        </div>
+        <h1 class="calculator__title title">Bread Unit (BU) Calculator</h1>
+        <div class="page-hero__lead">Enter the carbohydrate content per 100 g of a food and the total weight of the
+            portion — the calculator will work out how many bread units it contains. The calculation is based on the
+            definition of 1 BU described on the <a href="units.html">"Bread Unit"</a> page.</div>
+        <div class="calculator__items">
+            <div class="calculator__item">
+
+            <form  class="calculator__form form" name="form">
+                <fieldset class="form__btnBox">
+                    <legend class="visually-hidden">How many grams of carbohydrate count as 1 bread unit</legend>
+                    <input type="submit" class="form__btn1 form-btn" name="btn1" value="10" aria-pressed="false" aria-label="10 g of carbohydrate per 1 bread unit">
+                    <input type="submit" class="form__btn2 form-btn" name="btn2" value="12" aria-pressed="false" aria-label="12 g of carbohydrate per 1 bread unit">
+                    <div class="form__resultBox">
+                    <div class="form__btnText">Bread <br> Unit</div>
+                    <div class="form__result" aria-live="polite"></div>
+                 </div>
+            </fieldset>
+              <label for="carbon" class="form__label">Carbohydrates per 100 grams
+                <input type="number" name="carbohydrates" min="0" max="100" maxlength="2" class="form__input input" value="" id="carbon" aria-describedby="carbon-hint-max carbon-hint-min" aria-invalid="false">
+                <div class="form__modal-carbon" id="carbon-hint-max" aria-live="polite">No more than 100 grams of carbohydrate</div>
+                <div class="form__modal-carbon-second" id="carbon-hint-min" aria-live="polite">At least 1 gram of carbohydrate</div>
+            </label>
+            <label for="weight" class="form__label">Total food weight in grams
+                <input type="number" name="totalWeight" id="weight" class="form__input input" aria-invalid="false">
+            </label>
+            <button class="form__resultBtn" disabled>Calculate</button>
+
+            </form>
+
+
+        </div>
+            <div class="calculator__item">
+                <div class="calculator__picture">
+                    <img src="/img/calculator/calculator.jpg" alt="Illustration for the bread unit calculator"
+                        class="calculator__image"  loading="lazy">
+                </div>
+            </div>
+        </div>
+
+        <div class="callout callout--warning">
+            <span class="callout__icon" aria-hidden="true">⚠️</span>
+            <span>This calculator is for informational purposes only and does not replace the advice of a doctor or
+                dietitian regarding nutrition.</span>
+        </div>
+<div class="share-bar">
+            <span class="share-bar__label">Share:</span>
+            <button class="share-bar__btn" data-share="facebook">Facebook</button>
+            <button class="share-bar__btn" data-share="telegram">Telegram</button>
+            <button class="share-bar__btn" data-share="viber">Viber</button>
+            <button class="share-bar__btn" data-share="copy">Copy link</button>
+        </div>
+    </div>
+</section>

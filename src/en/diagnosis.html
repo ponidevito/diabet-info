@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @@include('../html/_seo.html', {
+        "title": "Diagnosing Diabetes: HbA1c, Fasting Glucose, OGTT — DiabetInfo",
+        "description": "How diabetes is diagnosed: the HbA1c test, fasting plasma glucose, the oral glucose tolerance test, and random glucose measurement.",
+        "path": "en/diagnosis.html",
+        "ukPath": "diagnosis.html",
+        "enPath": "en/diagnosis.html",
+        "esPath": "es/diagnosis.html",
+        "locale": "en_US",
+        "ogImage": "img/diabet-info.webp"
+    })
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <!-- Header -->
+    @@include('../html/_header-en.html', {"ukPath": "diagnosis.html", "esPath": "es/diagnosis.html"})
+
+    <!-- Main Page -->
+    <main class="main" id="main-content">
+
+             @@include('../html/en/_diagnosis.html')
+
+    </main>
+
+    <!-- Footer -->
+    @@include('../html/_footer-en.html')
+
+    </div>
+
+    <script src="/js/scripts.min.js"></script>
+</body>
+
+</html>

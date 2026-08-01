@@ -10,7 +10,7 @@ let path = {
         fonts: project_folder + '/fonts/',
     },
     src: {
-        html: [source_folder + '/*.html', '!' + source_folder + '/_*.html'],
+        html: [source_folder + '/*.html', source_folder + '/en/*.html', source_folder + '/es/*.html', '!' + source_folder + '/_*.html'],
         css: source_folder + '/scss/style.scss',
         js: source_folder + '/js/scripts.js',
         img: source_folder + '/img/**/*.+(png|jpg|jpeg|ico|svg|webp)',
@@ -54,7 +54,7 @@ function browserSync(params) {
 
 // HTML
 function html() {
-    return src(path.src.html)
+    return src(path.src.html, { base: source_folder })
         .pipe(fileinclude())
         .pipe(dest(path.build.html))
         .pipe(browsersync.reload({ stream: true }))

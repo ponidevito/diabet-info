@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    @@include('../html/_seo.html', {
+        "title": "Calculadora de Unidades de Pan (UP) — DiabetInfo",
+        "description": "Una calculadora en línea para estimar rápidamente las unidades de pan a partir del peso de un alimento y su contenido de carbohidratos por 100 g.",
+        "path": "es/calculator.html",
+        "ukPath": "calculator.html",
+        "enPath": "en/calculator.html",
+        "esPath": "es/calculator.html",
+        "locale": "es_ES",
+        "ogImage": "img/calculator/calculator.jpg"
+    })
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <!-- Header -->
+    @@include('../html/_header-es.html', {"ukPath": "calculator.html", "enPath": "en/calculator.html"})
+
+    <!-- Main Page -->
+    <main class="main" id="main-content">
+
+             @@include('../html/es/_calculatorDiabetes.html')
+
+    </main>
+
+    <!-- Footer -->
+    @@include('../html/_footer-es.html')
+
+    </div>
+
+    <script src="/js/scripts.min.js"></script>
+</body>
+
+</html>

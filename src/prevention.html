@@ -6,6 +6,10 @@
         "title": "Профілактика діабету 2 типу — DiabetInfo",
         "description": "Що наукові дослідження кажуть про зниження ризику діабету 2 типу: фізична активність, маса тіла, харчові патерни та інші фактори.",
         "path": "prevention.html",
+        "ukPath": "prevention.html",
+        "enPath": "en/prevention.html",
+        "esPath": "es/prevention.html",
+        "locale": "uk_UA",
         "ogImage": "img/diabet-info.webp"
     })
 </head>
@@ -14,7 +18,7 @@
     <div class="wrapper">
 
         <!-- Header -->
-    @@include('./html/_header.html')
+    @@include('./html/_header.html', {"enPath": "en/prevention.html", "esPath": "es/prevention.html"})
 
     <!-- Main Page -->
     <main class="main" id="main-content">
@@ -29,7 +33,7 @@
 
     </div>
 
-    <script src="./js/scripts.min.js"></script>
+    <script src="/js/scripts.min.js"></script>
 </body>
 
 </html>

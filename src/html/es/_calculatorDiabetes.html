@@ -1,0 +1,81 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Sobre la diabetes", "item": "https://diabet-info.top/es/"},
+    {"@type": "ListItem", "position": 2, "name": "Calculadora de Unidades de Pan", "item": "https://diabet-info.top/es/calculator.html"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Calculadora de Unidades de Pan (UP)",
+  "url": "https://diabet-info.top/es/calculator.html",
+  "inLanguage": "es",
+  "datePublished": "2026-07-26",
+  "dateModified": "2026-07-30",
+  "isPartOf": {"@type": "WebSite", "name": "DiabetInfo", "url": "https://diabet-info.top/es/"}
+}
+</script>
+
+<section class="section__calculator global-section">
+    <div class="calculator__container">
+        <div class="breadcrumbs">
+            <a href="/es/">Sobre la diabetes</a><span>→</span><span>Calculadora de Unidades de Pan</span>
+        </div>
+        <h1 class="calculator__title title">Calculadora de unidades de pan</h1>
+        <div class="page-hero__lead">Indique la cantidad de carbohidratos por 100 g de alimento y el peso total de
+            la porción — la calculadora calculará cuántas unidades de pan contiene. La fórmula de cálculo se basa en
+            la definición de 1 UP descrita en la página <a href="units.html">"Unidad de pan"</a>.</div>
+        <div class="calculator__items">
+            <div class="calculator__item">
+
+            <form  class="calculator__form form" name="form">
+                <fieldset class="form__btnBox">
+                    <legend class="visually-hidden">Cuántos gramos de carbohidratos equivalen a 1 unidad de pan</legend>
+                    <input type="submit" class="form__btn1 form-btn" name="btn1" value="10" aria-pressed="false" aria-label="10 g de carbohidratos por 1 unidad de pan">
+                    <input type="submit" class="form__btn2 form-btn" name="btn2" value="12" aria-pressed="false" aria-label="12 g de carbohidratos por 1 unidad de pan">
+                    <div class="form__resultBox">
+                    <div class="form__btnText">Unidad <br> de pan</div>
+                    <div class="form__result" aria-live="polite"></div>
+                 </div>
+            </fieldset>
+              <label for="carbon" class="form__label">Carbohidratos en 100 gramos
+                <input type="number" name="carbohydrates" min="0" max="100" maxlength="2" class="form__input input" value="" id="carbon" aria-describedby="carbon-hint-max carbon-hint-min" aria-invalid="false">
+                <div class="form__modal-carbon" id="carbon-hint-max" aria-live="polite">No más de 100 gramos de carbohidratos</div>
+                <div class="form__modal-carbon-second" id="carbon-hint-min" aria-live="polite">No menos de 1 gramo de carbohidratos</div>
+            </label>
+            <label for="weight" class="form__label">Peso total del alimento en gramos
+                <input type="number" name="totalWeight" id="weight" class="form__input input" aria-invalid="false">
+            </label>
+            <button class="form__resultBtn" disabled>Calcular</button>
+
+            </form>
+
+
+        </div>
+            <div class="calculator__item">
+                <div class="calculator__picture">
+                    <img src="/img/calculator/calculator.jpg" alt="Ilustración de la calculadora de unidades de pan"
+                        class="calculator__image"  loading="lazy">
+                </div>
+            </div>
+        </div>
+
+        <div class="callout callout--warning">
+            <span class="callout__icon" aria-hidden="true">⚠️</span>
+            <span>Esta calculadora tiene un carácter meramente informativo y no sustituye las recomendaciones de un
+                médico o nutricionista sobre la alimentación.</span>
+        </div>
+<div class="share-bar">
+            <span class="share-bar__label">Compartir:</span>
+            <button class="share-bar__btn" data-share="facebook">Facebook</button>
+            <button class="share-bar__btn" data-share="telegram">Telegram</button>
+            <button class="share-bar__btn" data-share="viber">Viber</button>
+            <button class="share-bar__btn" data-share="copy">Copiar enlace</button>
+        </div>
+    </div>
+</section>

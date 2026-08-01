@@ -6,6 +6,10 @@
         "title": "Часті запитання про діабет (FAQ) — DiabetInfo",
         "description": "Короткі відповіді на популярні запитання про діабет: різниця між типами, спадковість, симптоми, діагностика, профілактика і статистика у світі.",
         "path": "faq.html",
+        "ukPath": "faq.html",
+        "enPath": "en/faq.html",
+        "esPath": "es/faq.html",
+        "locale": "uk_UA",
         "ogImage": "img/diabet-info.webp"
     })
 </head>
@@ -14,7 +18,7 @@
     <div class="wrapper">
 
         <!-- Header -->
-    @@include('./html/_header.html')
+    @@include('./html/_header.html', {"enPath": "en/faq.html", "esPath": "es/faq.html"})
 
     <!-- Main Page -->
     <main class="main" id="main-content">
@@ -29,7 +33,7 @@
 
     </div>
 
-    <script src="./js/scripts.min.js"></script>
+    <script src="/js/scripts.min.js"></script>
 </body>
 
 </html>

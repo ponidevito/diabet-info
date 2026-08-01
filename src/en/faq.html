@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @@include('../html/_seo.html', {
+        "title": "Diabetes FAQ — DiabetInfo",
+        "description": "Short answers to common questions about diabetes: differences between types, heredity, symptoms, diagnosis, prevention, and global statistics.",
+        "path": "en/faq.html",
+        "ukPath": "faq.html",
+        "enPath": "en/faq.html",
+        "esPath": "es/faq.html",
+        "locale": "en_US",
+        "ogImage": "img/diabet-info.webp"
+    })
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <!-- Header -->
+    @@include('../html/_header-en.html', {"ukPath": "faq.html", "esPath": "es/faq.html"})
+
+    <!-- Main Page -->
+    <main class="main" id="main-content">
+
+             @@include('../html/en/_faq.html')
+
+    </main>
+
+    <!-- Footer -->
+    @@include('../html/_footer-en.html')
+
+    </div>
+
+    <script src="/js/scripts.min.js"></script>
+</body>
+
+</html>

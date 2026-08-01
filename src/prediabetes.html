@@ -6,6 +6,10 @@
         "title": "Переддіабет: симптоми, показники, чи можна вилікувати — DiabetInfo",
         "description": "Що таке переддіабет, за якими показниками глюкози й HbA1c його визначають, наскільки він поширений і чи можна зупинити перехід до діабету 2 типу.",
         "path": "prediabetes.html",
+        "ukPath": "prediabetes.html",
+        "enPath": "en/prediabetes.html",
+        "esPath": "es/prediabetes.html",
+        "locale": "uk_UA",
         "ogImage": "img/diabet-info.webp"
     })
 </head>
@@ -14,7 +18,7 @@
     <div class="wrapper">
 
         <!-- Header -->
-    @@include('./html/_header.html')
+    @@include('./html/_header.html', {"enPath": "en/prediabetes.html", "esPath": "es/prediabetes.html"})
 
     <!-- Main Page -->
     <main class="main" id="main-content">
@@ -29,7 +33,7 @@
 
     </div>
 
-    <script src="./js/scripts.min.js"></script>
+    <script src="/js/scripts.min.js"></script>
 </body>
 
 </html>

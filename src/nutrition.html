@@ -6,6 +6,10 @@
         "title": "Харчування при діабеті: загальні принципи — DiabetInfo",
         "description": "Підрахунок вуглеводів, глікемічний індекс, метод тарілки та міф про цукор і діабет — загальна інформація про харчування при цукровому діабеті.",
         "path": "nutrition.html",
+        "ukPath": "nutrition.html",
+        "enPath": "en/nutrition.html",
+        "esPath": "es/nutrition.html",
+        "locale": "uk_UA",
         "ogImage": "img/unit__about/eat.png"
     })
 </head>
@@ -14,7 +18,7 @@
     <div class="wrapper">
 
         <!-- Header -->
-    @@include('./html/_header.html')
+    @@include('./html/_header.html', {"enPath": "en/nutrition.html", "esPath": "es/nutrition.html"})
 
     <!-- Main Page -->
     <main class="main" id="main-content">
@@ -29,7 +33,7 @@
 
     </div>
 
-    <script src="./js/scripts.min.js"></script>
+    <script src="/js/scripts.min.js"></script>
 </body>
 
 </html>

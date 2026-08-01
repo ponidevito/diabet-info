@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    @@include('../html/_seo.html', {
+        "title": "Aviso médico — DiabetInfo",
+        "description": "DiabetInfo es un proyecto puramente informativo sobre la diabetes. Descubra por qué el contenido del sitio no es asesoramiento médico y cómo usarlo de forma responsable.",
+        "path": "es/disclaimer.html",
+        "ukPath": "disclaimer.html",
+        "enPath": "en/disclaimer.html",
+        "esPath": "es/disclaimer.html",
+        "locale": "es_ES",
+        "ogImage": "img/diabet-info.webp"
+    })
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <!-- Header -->
+    @@include('../html/_header-es.html', {"ukPath": "disclaimer.html", "enPath": "en/disclaimer.html"})
+
+    <!-- Main Page -->
+    <main class="main" id="main-content">
+
+             @@include('../html/es/_disclaimer.html')
+
+    </main>
+
+    <!-- Footer -->
+    @@include('../html/_footer-es.html')
+
+    </div>
+
+    <script src="/js/scripts.min.js"></script>
+</body>
+
+</html>

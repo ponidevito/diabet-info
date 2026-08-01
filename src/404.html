@@ -8,23 +8,23 @@
     <meta name="robots" content="noindex, follow">
     <title>Сторінку не знайдено (404) — DiabetInfo</title>
     <meta name="description" content="Такої сторінки не існує або її було переміщено. Перейдіть на головну DiabetInfo, щоб знайти інформацію про діабет.">
-    <link rel="icon" href="img/favicon.png" type="image/png">
-    <link rel="apple-touch-icon" href="img/favicon.png">
-    <link rel="manifest" href="site.webmanifest">
+    <link rel="icon" href="/img/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+    <link rel="manifest" href="/site.webmanifest">
     <meta name="theme-color" content="#0E7C7B">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 
-    <link rel="stylesheet" href="./css/style.min.css">
+    <link rel="stylesheet" href="/css/style.min.css">
 </head>
 
 <body>
     <div class="wrapper">
 
         <!-- Header -->
-    @@include('./html/_header.html')
+    @@include('./html/_header.html', {"enPath": "en/", "esPath": "es/"})
 
     <!-- Main Page -->
     <main class="main" id="main-content">
@@ -76,7 +76,7 @@
 
     </div>
 
-    <script src="./js/scripts.min.js"></script>
+    <script src="/js/scripts.min.js"></script>
 </body>
 
 </html>

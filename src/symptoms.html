@@ -6,6 +6,10 @@
         "title": "Симптоми діабету: ранні ознаки 1 і 2 типу — DiabetInfo",
         "description": "Які симптоми характерні для діабету: загальна тріада ознак, відмінності між 1 і 2 типом, та коли симптоми можуть свідчити про невідкладний стан.",
         "path": "symptoms.html",
+        "ukPath": "symptoms.html",
+        "enPath": "en/symptoms.html",
+        "esPath": "es/symptoms.html",
+        "locale": "uk_UA",
         "ogImage": "img/diabet-info.webp"
     })
 </head>
@@ -14,7 +18,7 @@
     <div class="wrapper">
 
         <!-- Header -->
-    @@include('./html/_header.html')
+    @@include('./html/_header.html', {"enPath": "en/symptoms.html", "esPath": "es/symptoms.html"})
 
     <!-- Main Page -->
     <main class="main" id="main-content">
@@ -29,7 +33,7 @@
 
     </div>
 
-    <script src="./js/scripts.min.js"></script>
+    <script src="/js/scripts.min.js"></script>
 </body>
 
 </html>

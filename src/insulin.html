@@ -6,6 +6,10 @@
         "title": "Види інсуліну: швидкий, короткий, тривалий, змішаний — DiabetInfo",
         "description": "Огляд видів інсуліну: швидкої, короткої, середньої і тривалої дії, змішані препарати, а також сучасні інсуліни (біосиміляри, ікодек) і голки для шприц-ручок.",
         "path": "insulin.html",
+        "ukPath": "insulin.html",
+        "enPath": "en/insulin.html",
+        "esPath": "es/insulin.html",
+        "locale": "uk_UA",
         "ogImage": "img/diabet-info.webp"
     })
 </head>
@@ -14,7 +18,7 @@
     <div class="wrapper">
 
         <!-- Header -->
-    @@include('./html/_header.html')
+    @@include('./html/_header.html', {"enPath": "en/insulin.html", "esPath": "es/insulin.html"})
 
     <!-- Main Page -->
     <main class="main" id="main-content">
@@ -29,7 +33,7 @@
 
     </div>
 
-    <script src="./js/scripts.min.js"></script>
+    <script src="/js/scripts.min.js"></script>
 </body>
 
 </html>

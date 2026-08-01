@@ -60,9 +60,35 @@ subs.forEach((subItem) => {
   });
 });
 
+// language dropdown
+let langDropdown = document.querySelector(".lang-dropdown");
+if (langDropdown) {
+  let langTrigger = langDropdown.querySelector(".lang-dropdown__trigger");
+  let langMenu = langDropdown.querySelector(".lang-dropdown__menu");
+
+  langTrigger.addEventListener("click", function (e) {
+    let isActive = langMenu.classList.contains("_active");
+    langMenu.classList.toggle("_active", !isActive);
+    langTrigger.setAttribute("aria-expanded", String(!isActive));
+    e.stopPropagation();
+  });
+
+  langDropdown.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      langMenu.classList.remove("_active");
+      langTrigger.setAttribute("aria-expanded", "false");
+      langTrigger.focus();
+    }
+  });
+}
+
 // click outside — close dropdowns and calculator hints
 html.addEventListener("click", function (e) {
   closeAllSubmenus();
+  if (langDropdown) {
+    langDropdown.querySelector(".lang-dropdown__menu").classList.remove("_active");
+    langDropdown.querySelector(".lang-dropdown__trigger").setAttribute("aria-expanded", "false");
+  }
   let carbonHint = document.querySelector(".form__modal-carbon");
   let carbonHintSecond = document.querySelector(".form__modal-carbon-second");
   if (carbonHint) carbonHint.classList.remove("_active");

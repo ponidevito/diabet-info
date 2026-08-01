@@ -6,6 +6,10 @@
         "title": "Ускладнення діабету: гострі й хронічні наслідки — DiabetInfo",
         "description": "Гострі ускладнення діабету (кетоацидоз, гіпоглікемія) та хронічні (ретинопатія, нефропатія, нейропатія, серцево-судинні хвороби) — оглядово.",
         "path": "complications.html",
+        "ukPath": "complications.html",
+        "enPath": "en/complications.html",
+        "esPath": "es/complications.html",
+        "locale": "uk_UA",
         "ogImage": "img/diabet-info.webp"
     })
 </head>
@@ -14,7 +18,7 @@
     <div class="wrapper">
 
         <!-- Header -->
-    @@include('./html/_header.html')
+    @@include('./html/_header.html', {"enPath": "en/complications.html", "esPath": "es/complications.html"})
 
     <!-- Main Page -->
     <main class="main" id="main-content">
@@ -29,7 +33,7 @@
 
     </div>
 
-    <script src="./js/scripts.min.js"></script>
+    <script src="/js/scripts.min.js"></script>
 </body>
 
 </html>
