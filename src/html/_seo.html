@@ -32,3 +32,22 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 
 <link rel="stylesheet" href="/css/style.min.css">
+
+<!-- Speculation Rules -->
+<script type="speculationrules">
+{
+    "prerender": [
+        {
+            "where": {
+                "and": [
+                    { "href_matches": "/*" },
+                    { "not": { "selector_matches": "[target=_blank]" } },
+                    { "not": { "selector_matches": "[rel~=nofollow]" } },
+                    { "not": { "selector_matches": "[download]" } }
+                ]
+            },
+            "eagerness": "moderate"
+        }
+    ]
+}
+</script>
