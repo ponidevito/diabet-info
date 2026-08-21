@@ -10,3 +10,331 @@
   to = "/"
   status = 301
   force = true
+
+# Force the extensionless duplicates created by Netlify's automatic
+# "Pretty URLs" (e.g. /type-1 serving the same content as /type-1.html
+# with a 200, instead of redirecting) back to the canonical .html URL
+# that sitemap.xml, rel=canonical and all internal links actually use.
+[[redirects]]
+  from = "/type-1"
+  to = "/type-1.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/type-2"
+  to = "/type-2.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/prediabetes"
+  to = "/prediabetes.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/gestational"
+  to = "/gestational.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/symptoms"
+  to = "/symptoms.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/causes"
+  to = "/causes.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/diagnosis"
+  to = "/diagnosis.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/complications"
+  to = "/complications.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/prevention"
+  to = "/prevention.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/insulin"
+  to = "/insulin.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/glucometers"
+  to = "/glucometers.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/nutrition"
+  to = "/nutrition.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/units"
+  to = "/units.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/table"
+  to = "/table.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculator"
+  to = "/calculator.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/faq"
+  to = "/faq.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/disclaimer"
+  to = "/disclaimer.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/privacy"
+  to = "/privacy.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/type-1"
+  to = "/en/type-1.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/type-2"
+  to = "/en/type-2.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/prediabetes"
+  to = "/en/prediabetes.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/gestational"
+  to = "/en/gestational.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/symptoms"
+  to = "/en/symptoms.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/causes"
+  to = "/en/causes.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/diagnosis"
+  to = "/en/diagnosis.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/complications"
+  to = "/en/complications.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/prevention"
+  to = "/en/prevention.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/insulin"
+  to = "/en/insulin.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/glucometers"
+  to = "/en/glucometers.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/nutrition"
+  to = "/en/nutrition.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/units"
+  to = "/en/units.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/table"
+  to = "/en/table.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/calculator"
+  to = "/en/calculator.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/faq"
+  to = "/en/faq.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/disclaimer"
+  to = "/en/disclaimer.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/privacy"
+  to = "/en/privacy.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/type-1"
+  to = "/es/type-1.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/type-2"
+  to = "/es/type-2.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/prediabetes"
+  to = "/es/prediabetes.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/gestational"
+  to = "/es/gestational.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/symptoms"
+  to = "/es/symptoms.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/causes"
+  to = "/es/causes.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/diagnosis"
+  to = "/es/diagnosis.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/complications"
+  to = "/es/complications.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/prevention"
+  to = "/es/prevention.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/insulin"
+  to = "/es/insulin.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/glucometers"
+  to = "/es/glucometers.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/nutrition"
+  to = "/es/nutrition.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/units"
+  to = "/es/units.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/table"
+  to = "/es/table.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/calculator"
+  to = "/es/calculator.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/faq"
+  to = "/es/faq.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/disclaimer"
+  to = "/es/disclaimer.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/privacy"
+  to = "/es/privacy.html"
+  status = 301
+  force = true
