@@ -30,6 +30,7 @@ let path = {
 
 let { src, dest } = require('gulp'),
     gulp = require('gulp'),
+    { Transform } = require('stream'),
     browsersync = require('browser-sync').create(),
     fileinclude = require('gulp-file-include'),
     del = require('del'),
@@ -40,6 +41,29 @@ let { src, dest } = require('gulp'),
     rename = require('gulp-rename'),
     uglify = require('gulp-uglify-es').default,
     imagemin = require('gulp-imagemin')
+
+// Netlify Pretty URLs expose HTML pages as `/page/`. Normalise all generated
+// first-party URLs so links, metadata, JSON-LD and sitemap agree on that
+// canonical format, while source templates may retain their file-based names.
+function prettyUrls() {
+    return new Transform({
+        objectMode: true,
+        transform(file, encoding, callback) {
+            if (file.isBuffer()) {
+                let content = file.contents.toString()
+
+                content = content
+                    .replace(/href="(?:\/(?:en|es)\/|\/)?calculator\.html(?=["#?])/g, 'href="https://breadunits.top/')
+                    .replace(/https:\/\/diabet-info\.top\/((?:en|es)\/)?([a-z0-9-]+)\.html\b/g, 'https://diabet-info.top/$1$2/')
+                    .replace(/href="((?:\/(?:en|es)\/)?[a-z0-9-]+)\.html(?=["#?])/g, 'href="$1/')
+
+                file.contents = Buffer.from(content)
+            }
+
+            callback(null, file)
+        },
+    })
+}
 
 // Browser Sync
 function browserSync(params) {
@@ -56,6 +80,7 @@ function browserSync(params) {
 function html() {
     return src(path.src.html, { base: source_folder })
         .pipe(fileinclude())
+        .pipe(prettyUrls())
         .pipe(dest(path.build.html))
         .pipe(browsersync.reload({ stream: true }))
 }
@@ -72,7 +97,7 @@ function fonts() {
 
 // Other root files (robots.txt, sitemap.xml, site.webmanifest)
 function other() {
-    return src(path.src.other).pipe(dest(path.build.html))
+    return src(path.src.other).pipe(prettyUrls()).pipe(dest(path.build.html))
 }
 
 // Images Compress
