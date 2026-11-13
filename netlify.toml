@@ -6,8 +6,9 @@
   NODE_VERSION = "20"
 
 # Use Netlify's built-in Pretty URLs as the single URL-normalisation layer.
-# It serves the static `*.html` files at extensionless, trailing-slash URLs
-# (for example, `/type-1/`) and handles legacy `*.html` requests. Keeping
+# Netlify serves the static `*.html` files at extensionless URLs WITHOUT a
+# trailing slash (for example, `/type-1`; `/type-1/` gets a 301 to it). The
+# gulp build rewrites canonical/hreflang/sitemap/links to that exact form. Keeping
 # this explicit prevents a large, error-prone list of per-page redirects.
 [build.processing.html]
   pretty_urls = true

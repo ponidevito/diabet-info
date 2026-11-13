@@ -42,9 +42,9 @@ let { src, dest } = require('gulp'),
     uglify = require('gulp-uglify-es').default,
     imagemin = require('gulp-imagemin')
 
-// Netlify Pretty URLs expose HTML pages as `/page/`. Normalise all generated
-// first-party URLs so links, metadata, JSON-LD and sitemap agree on that
-// canonical format, while source templates may retain their file-based names.
+// Netlify serves `page.html` with 200 at `/page` and 301-redirects `/page/`
+// to `/page`. Normalise all generated first-party URLs to `/page` so links,
+// canonical, hreflang, JSON-LD and sitemap never point at a redirect.
 function prettyUrls() {
     return new Transform({
         objectMode: true,
@@ -54,8 +54,8 @@ function prettyUrls() {
 
                 content = content
                     .replace(/href="(?:\/(?:en|es)\/|\/)?calculator\.html(?=["#?])/g, 'href="https://breadunits.top/')
-                    .replace(/https:\/\/diabet-info\.top\/((?:en|es)\/)?([a-z0-9-]+)\.html\b/g, 'https://diabet-info.top/$1$2/')
-                    .replace(/href="((?:\/(?:en|es)\/)?[a-z0-9-]+)\.html(?=["#?])/g, 'href="$1/')
+                    .replace(/https:\/\/diabet-info\.top\/((?:en|es)\/)?([a-z0-9-]+)\.html\b/g, 'https://diabet-info.top/$1$2')
+                    .replace(/href="(\/?(?:(?:en|es)\/)?[a-z0-9-]+)\.html(?=["#?])/g, 'href="$1')
 
                 file.contents = Buffer.from(content)
             }
